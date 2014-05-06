@@ -4,6 +4,12 @@ source 'http://rubygems.org'
 
 gem "middleman", "~>3.3.2"
 
+gem 'slim', '~>2.0.2'
+
+gem "middleman-imageoptim", "~> 0.1.4"
+
+gem "middleman-blog"
+
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 
