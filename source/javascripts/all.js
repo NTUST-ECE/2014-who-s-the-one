@@ -1,5 +1,10 @@
 //= require jquery/dist/jquery.js
 //= require patw.facebook.js
+//= require Han/js/han.js
+//= require foundation/js/foundation.js
+
+// foundation
+$(document).foundation();
 
 // AppID
 PatwFB.appId = '166332873401574';
@@ -112,3 +117,38 @@ function Vote() {
 		dataType: 'json'
 	});
 }
+
+window.onload = function () {
+	$('.welcome .video').css('background-image', "url('/images/bgv.gif')");
+};
+
+$(window).scroll(function () {
+
+	if ($('section.story').offset().top - $(this).scrollTop() > -80) {
+		$('section.welcome').css({
+			'top': ($(this).scrollTop() / 3) + "px"
+		});
+	}
+
+	if ($(this).scrollTop() > 3) {
+		$('.top-bar').addClass('show');
+	} else {
+		$('.top-bar').removeClass('show');
+	}
+
+});
+
+$(function() {
+	$('a[href*=#]:not([href=#])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			if (target.length) {
+				$('html,body').animate({
+					scrollTop: target.offset().top
+				}, 1000);
+				return false;
+			}
+		}
+	});
+});

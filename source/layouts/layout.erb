@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="zh-tw" class="han-la">
   <head>
     <meta charset="utf-8">
     
@@ -7,12 +7,19 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || "The Middleman" %></title>
+    <title><%= current_page.data.title || "2014 不分之夜 ⋐迷失課 Who's the One?⋑" %></title>
     
-    <%= stylesheet_link_tag "normalize", "all" %>
+    <%= stylesheet_link_tag "all" %>
   </head>
-  
-  <body class="<%= page_classes %>">
+  <body class="<%= page_classes %>" id="body">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=166332873401574&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <%= yield %>
     <%= javascript_include_tag "all" %>
   </body>

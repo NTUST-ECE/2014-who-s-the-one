@@ -1,0 +1,117 @@
+%nav{:class => "top-bar"}
+  %ul
+    %li
+      %a{href: "#body"} Who's The One
+    %li
+      %a{href: "#story"} Story
+    %li
+      %a{href: "#sponsors"} Sponsors
+    %li
+      %a{href: "#vote"} Vote
+    %li
+      %a{href: "#comments"} Comments
+
+%section.welcome#welcome
+  .video
+  .bg
+  .wrapper
+    .center-box
+      .content
+        %h1 迷失課
+        %br
+        %a.play 
+          .inner 看影片
+        %h2 2014台科大工程.管理.創設.電資四系聯合不分之夜!!!!
+        %p 生命 是一場不可重演的舞台劇 青春即是導演 編寫回憶／五個人 五段人生 高校的青澀 大學的繽紛／互相交錯圍繞 迷失在時間劇本裡／究竟 誰是那個注定的一人 就讓我們一起找尋
+    .go-vote
+      %a.vote.button.alert{href: "#vote"} 投票＆參加抽獎
+
+.after-welcome
+
+%section.story#story
+  .wrapper
+
+    %h1
+      背景故事
+      %small Story
+
+    .img= image_tag lorem.image('300x400')
+
+    :markdown
+
+      「一定得有人犧牲，除了動手，沒有任何規則！接下來的課裡，唯一的目的就是<b>選出一個被犧牲的人</b>。」
+
+      1884 年 7 月，一艘遊船在南大西洋離岸 1300 英里處失事漂流，救生船上僅有 4 名船員，船長，杜德利、大副，史蒂芬、水手，布魯克，最後是 17 歲孤兒出身的船艙服務員，理查帕克。
+
+      帕克因飲用海水而致病，缺少淡水和食物的第20天時，杜德利在史蒂芬同意下後殺死男孩帕克，此 3 人也因此存活到救援到來。 
+
+      此為英國史上最大爭議訴訟案，<u>女王訴杜德利與史蒂芬案</u> *(R v. Dudley and Stephens 1884)*。
+
+      今天若換作是你，是否能為了生存，對素昧平生的他人下手？而那又是誰該犧牲？
+
+      Who’s the better, who’s not? Who is The One? You decided. 
+
+%section.sponsors#sponsors
+  .wrapper
+    %h1
+      贊助廠商
+      %small Sponsors
+
+    %a.clogo{:href => '#', :target => '_blank'}
+      .img= image_tag lorem.image('400x200', :text => 'LOGO')
+    %a.clogo{:href => '#', :target => '_blank'}
+      .img= image_tag lorem.image('400x200', :text => 'LOGO')
+    %a.clogo{:href => '#', :target => '_blank'}
+      .img= image_tag lorem.image('400x300', :text => 'LOGO')
+    %a.clogo{:href => '#', :target => '_blank'}
+      .img= image_tag lorem.image('400x200', :text => 'LOGO')
+    %a.clogo{:href => '#', :target => '_blank'}
+      .img= image_tag lorem.image('300x300', :text => 'LOGO')
+    %a.clogo{:href => '#', :target => '_blank'}
+      .img= image_tag lorem.image('400x200', :text => 'LOGO')
+    /%a.clogo{:href => '#', :target => '_blank'}
+    /  .img= image_tag lorem.image('400x300', :text => 'LOGO')
+    /%a.clogo{:href => '#', :target => '_blank'}
+    /  .img= image_tag lorem.image('400x200', :text => 'LOGO')
+    /%a.clogo{:href => '#', :target => '_blank'}
+    /  .img= image_tag lorem.image('400x250', :text => 'LOGO')
+
+%section.vote#vote
+  .wrapper
+
+    %h1 Your Choice
+
+    %p 放假了，早晨七點，假如明天有更好的世界；把正方形的咖啡桌磨成輪迴，一通電話，B1開了家Lavazza啊，vege，半夜的我竟還未加不加咖啡糾結了半天，其實我真的覺得自己蠻不孝的！
+    
+    %article.role
+      %a.img= image_tag 'role/1.jpg'
+      %h1 溫拿
+      %p 突然鋒利的回憶，只剩眼淚，好想你，越傷人了大門取代一道牆，跌跌撞撞的走著突然好想你，遠離了世界塵垢，還騙不過自己最怕回憶，在我活的地方為什麼你。
+    %article.role
+      %a.img= image_tag 'role/2.jpg'
+      %h1 萱姊
+      %p 在我去唸書之後，那我們如何能夠再次在生活中去冒險，就算是最年輕的初階秘書都有碩士學位。
+    %article.role
+      %a.img= image_tag 'role/3.jpg'
+      %h1 芸芸
+      %p 這一次，先拋開紛擾，每一天笑臉都晴朗燦爛而直接，眼前的模樣關了燈，一直到老了難道就真的，一步步想念。
+    %article.role
+      %a.img= image_tag 'role/4.jpg'
+      %h1 小斌
+      %p 你已經決定了你已經決定了你已經決定了，感情已經用這厚明知難回頭感情已經用這厚明知難回頭我站在你左側卻像隔著銀河我站在你左側卻像隔著銀河我站在你左側。
+    %article.role
+      %a.img= image_tag 'role/5.jpg'
+      %h1 阿風
+      %p 使人們沒有年歲的感覺，教幾個人去做官一樣，忘卻了溪和水，乙接著嘴說，也就分外著急，是不容有異議，因為久慣於暗黑的眼睛，現在不高興了，便以身體的重力倒下去，反採用那四季不調和，可能成功嗎？
+
+%section.location#location
+  .wrapper
+
+%section.comments#comments
+  .wrapper
+    %h1 
+      留言板
+      %small Comments
+    .comments
+      :markdown
+        <div class="fb-comments" data-href="http://who.ntust.co" data-numposts="10" data-colorscheme="light"></div>

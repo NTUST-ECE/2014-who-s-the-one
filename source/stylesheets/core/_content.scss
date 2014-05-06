@@ -1,0 +1,189 @@
+// *************************************
+//
+//   Content
+//   -> Typography
+//
+// *************************************
+
+// -------------------------------------
+//   Vertical Rhythm
+// -------------------------------------
+
+@include establish-baseline;
+
+// -------------------------------------
+//   Headings & Paragraph & ...
+// -------------------------------------
+
+@include selection($white, rgba(0,0,0, .7));
+
+body {
+	font-family: $base-fontFamily;
+	text-rendering: optimizeLegibility;
+}
+
+p, blockquote, code, dl, ol, ul {
+	@include rhythm-to(0, 0, 0, 1, 16px);
+}
+
+#{headings()}, p {
+	@include transition(opacity .3s);
+}
+
+#{headings(1,6)} {
+	overflow: hidden;
+	font-family: "xingothic-tc-w8", $base-fontFamily;
+
+	small {
+		font-family: "xingothic-tc-w6", $base-fontFamily;
+	}
+}
+
+h1, %c-h1 {
+	@include rhythm-to(0, 0, 0, 1, 48px);
+}
+
+h2, %c-h2 {
+	@include rhythm-to(1, 0.5, 0.5, 0, 36px);
+
+	&:first-child {
+		@include margin-leader(0);
+	}
+}
+
+h3, %c-h3 {
+	@include rhythm-to(0, 0.5, 0.5, 0, 30px);
+}
+
+h4, %c-h4 {
+	@include rhythm-to(0, 0.5, 0.5, 0, 24px);
+}
+
+h5, %c-h5 {
+	@include rhythm-to(0, 0.5, 0.5, 0, 20px);
+}
+
+h6, %c-h6 {
+	@include rhythm-to(0, 0.5, 0.5, 0, 20px);
+}
+
+blockquote {
+	margin-bottom: 0;
+	border-left: 5px solid $warm-black;
+	font-family: "dats4", $base-serif-fontFamily;
+
+	p {
+		font-size: 110%;
+	}
+}
+
+strong {
+	font-family: "xingothic-tc-w6", $base-fontFamily;
+}
+
+.content p.img, .content div.img {
+	padding-bottom: 18px;
+}
+
+code, .code, .content-box, %content-box {
+	overflow: auto;
+}
+
+// -------------------------------------
+//   輔助元素
+// -------------------------------------
+
+.c-light, %c-light {
+	font-family: "xingothic-tc-w3", $base-fontFamily;
+}
+
+.c-avenir, %c-avenir {
+	font-family: "Avenir Next", "Avenir", "xingothic-tc-w3", $base-fontFamily;
+}
+
+p.img {
+	text-align: center;
+	color: lighten($base-color, 20%);
+	line-height: 36px;
+}
+
+.icon {
+	font-family: "icon-font" !important;
+	display: inline-block !important;
+	width: 1em !important;
+	visibility: collapse !important;
+
+	&::first-letter {
+		font-family: "icon-font" !important;
+		visibility: visible !important;
+	}
+}
+
+// -------------------------------------
+//   漢字標準格式 hack
+//   -> 印刷品般的漢字網頁排版框架
+// -------------------------------------
+
+// ----- 漢拉間隙不要打亂垂直旋律 ----- //
+html.han-la hanla:after {
+	line-height: 0.1px;
+}
+
+em:lang(zh), em:lang(ja) {
+
+	// ----- 不會影響垂直旋律的強調點 ----- //
+	@include experimental(text-emphasis, none, -moz, -webkit, -o, -ms, -khtml, official);
+
+	.char.cjk {
+		position: relative;
+
+		&::after {
+			content: "•";
+			display: block;
+			position: absolute;
+			top: 0.4em;
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	.char.latin {
+		font-style: italic;
+	}
+
+	// ----- 首行清單不要縮那麼多 ----- //
+	h1 + ol, h1 + ul,
+	h2 + ol, h2 + ul,
+	h3 + ol, h3 + ul,
+	h4 + ol, h4 + ul,
+	h5 + ol, h5 + ul,
+	h6 + ol, h6 + ul {
+		padding-left: 1em;
+	}
+}
+
+// ----- poem-like ----- //
+
+.poem-like, %poem-like {
+	font-family: "datf3", $base-serif-fontFamily;
+}
+
+// -------------------------------------
+//   Utilities
+// -------------------------------------
+
+%c-center, .c-center {
+	text-align: center;
+}
+
+%c-condense, .c-condense {
+	font-size: 85%;
+}
+
+%c-lead, .c-lead {
+	font-size: 125%;
+}
+
+%c-shout, .c-shout {
+	text-transform: uppercase;
+}

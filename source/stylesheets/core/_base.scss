@@ -1,0 +1,59 @@
+// *************************************
+//
+//   Base
+//   -> Base-level tags (body, p, etc.)
+//
+// *************************************
+
+html {
+	font-size: $base-fontSize;
+}
+
+body {
+	background: $base-background;
+	color: $base-color;
+	font-family: $base-fontFamily;
+	font-size: 100%;
+	line-height: $base-lineHeight;
+}
+
+// -------------------------------------
+//   Block Content
+// -------------------------------------
+
+p {
+	font-size: rem($base-fontSize);
+}
+
+blockquote, blockquote p {
+	color: $warm-black;
+}
+
+// -------------------------------------
+//   Inline Content
+// -------------------------------------
+
+a {
+	color: $base-link-color;
+	text-decoration: none;
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+// -------------------------------------
+//   Div for Drawing
+// -------------------------------------
+
+div.a, div.b, div.c, div.d, div.e {
+	display: none;
+}
+
+// -------------------------------------
+//   No-breaking elements
+// -------------------------------------
+
+.name, [itemprop="name"] {
+	display: inline-block;
+}

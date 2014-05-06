@@ -1,0 +1,91 @@
+// *************************************
+//
+//   Settings
+//   -> Fonts, Variables
+//
+// *************************************
+
+// -------------------------------------
+//   @font-face
+// -------------------------------------
+
+// @font-face {
+// 	font-family: 'icon-font';
+// 	src: url('/fonts/icon-font.eot');
+// 	src: url('/fonts/icon-font.eot') format('embedded-opentype'),
+// 	     url('/fonts/icon-font.woff') format('woff'),
+// 	     url('/fonts/icon-font.ttf') format('truetype'),
+// 	     url('/fonts/icon-font.svg') format('svg');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+// ----- Base Colors ----- //
+
+$black: #333;
+$white: #fff;
+$warm-black: #594f44;
+$warm-white: #f9f3ed;
+$red: #bf280d;
+$green: #333;
+$blue: #0e83c2;
+
+$base-color: $black;
+$base-link-color: $blue;
+$base-bgc: lighten($warm-white, 4%);
+$base-background: $base-bgc;
+$content-bgc: $base-background;
+
+$nav-active-color: $red;
+
+$orange: #d74c11;
+$grid-background-column-color: rgba(darken($orange, 8%), .2);
+$grid-background-baseline-color: rgba($warm-black, .3);
+
+// ----- Base Borders & Box Shadows ----- //
+
+$base-border: 1px solid $base-color;
+$base-borderRadius: 3px;
+$base-boxShadow: 0 1px 2px rgba($base-color, 0.25);
+
+// ----- Base Content ----- //
+
+// Compass Vertical Rhythm
+$base-font-size: 16px;
+$base-line-height: $base-font-size * 3/2;
+
+$base-sansSerif-fontFamily: "xingothic-tc-w3", "蘋果儷中黑", "微軟正黑體", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-serif-fontFamily: "蘋果儷細宋", "Adobe 明體", "Times New Roman", Times, serif;
+$base-fontFamily: $base-sansSerif-fontFamily;
+$base-fontSize: 16px;
+$base-lineHeight: $base-line-height;
+
+// ----- Base Layout ----- //
+
+// $base-whitespace: 20px;
+
+// ----- Content ----- //
+
+// ----- Layout ----- //
+
+$header-height: 280px;
+$index-header-height: 72vh;
+$index-header-height-fallback: 460px;
+$container-maxWidth: 1200px;
+$content-shadow: 0 0 18px rgba($black, .7);
+
+// ----- Responsive Breakpoints ----- //
+
+$phone-min-width: 341px;
+$tablet-min-width: 769px;
+$desktop-min-width: 941px;
+$large-desktop-min-width: 1441px;
+$very-large-desktop-min-width: 1700px;
+
+// ----- Constants ----- //
+
+$infinite: 999999px;

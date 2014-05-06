@@ -1,0 +1,308 @@
+// *************************************
+//
+//   Layout
+//   -> Margin, Padding, Sizing
+//
+// *************************************
+
+// -------------------------------------
+//   Susy Gird Config
+// -------------------------------------
+
+$total-columns: 10;
+$column-width: 4em;
+$gutter-width: 2.5em;
+$grid-padding: 20px;
+
+// -------------------------------------
+//   Base
+//   -> body, body wrapper
+// -------------------------------------
+
+body {
+	cursor: auto;
+	position: relative;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	// overflow-x: hidden;
+
+	* {
+		@include transition-duration(.1s);
+	}
+}
+
+// -------------------------------------
+//   Sections
+// -------------------------------------
+
+body > section {
+	overflow: hidden;
+	min-width: 1000px;
+	padding: 0 30px;
+}
+
+
+body > section > div {
+	@include container($total-columns);
+	@include pie-clearfix;
+	position: relative;
+	padding: 100px 0;
+	max-width: 1250px;
+	min-width: 1000px;
+	overflow-x: hidden;
+}
+
+.top-bar {
+	@include opacity(0);
+	height: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	@include transition-duration(1s);
+	overflow: hidden;
+}
+
+.top-bar.show {
+	@include opacity(1);
+	height: 45px;
+}
+
+.top-bar {
+
+	ul {
+		text-align: center;
+	}
+
+
+	li {
+		height: 45px;
+		margin: 0;
+		font-size: 16px;
+		display: inline-block;
+	}
+
+	a {
+		width: auto;
+		font-weight: normal;
+		color: #fff;
+		width: auto;
+		display: block;
+		padding: 0 15px;
+		line-height: 45px;
+		font-size: 1.0625rem;
+		margin: 0;
+	}
+
+	a.active {
+		background-color: #eee;
+		color: #111;
+	}
+}
+
+
+// -------------------------------------
+//   Welcome
+// -------------------------------------
+
+section.welcome {
+	// position: fixed;
+	height: 95vh;
+	min-height: 800px;
+	background-color: #aaa;
+	position: relative;
+	padding-top: 0;
+	@include transition-duration(0s);
+
+	* {
+		color: $white;
+		@include text-shadow(0 2px 8px rgba(0,0,0, .8));
+	}
+
+	.video {
+		position: absolute;
+		width: 100vw;
+		min-width: 1000px;
+		height: 100vh;
+		min-height: 800px;
+		max-width: none;
+		top: 0;
+		left: 0;
+		@include background-size(cover);
+		z-index: 0;
+	}
+
+	.bg {
+		width: $infinite;
+		height: $infinite;
+		width: 100vw;
+		min-width: 1000px;
+		height: 100vh;
+		min-height: 800px;
+		max-width: none;
+		@include background-image(url('/images/background.png'));
+		background-repeat: repeat;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+	}
+
+	> div {
+		height: 100%;
+		display: table;
+
+		.center-box {
+			width: 100%;
+			height: 100%;
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+
+		.content {
+			text-align: center;
+
+			@include span-columns(6);
+			@include pre(2);
+			@include post(2);
+		}
+	}
+
+	h1 {
+		@include replace-text('logo.png');
+		-webkit-background-size: 100%;
+		background-size: 100%;
+		display: inline-block;
+		width: 360px;
+		height: 360px;
+		margin: 0;
+	}
+
+	.play {
+		display: inline-block;
+		position: relative;
+		width: 70px;
+		height: 70px;
+		margin-top: -10px;
+
+		.inner {
+			@include replace-text('play_button.png');
+			-webkit-background-size: 100%;
+			background-size: 100%;
+			display: inline-block;
+			width: 70px;
+			height: 70px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include transition-duration(.8s);
+		}
+
+		&:hover .inner {
+			width: 110px;
+			height: 110px;
+			position: absolute;
+			top: -20px;
+			left: -20px;
+			// @include rotate(-10deg, false, false);
+		}
+	}
+
+	.go-vote {
+		position: absolute;
+		left: 0;
+		top: 10px;
+		@include span-columns(2);
+		@include pre(8);
+		@include text-shadow(none);
+	}
+}
+
+.after-welcome {
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	box-shadow: 0 -40px 150px rgba(0,0,0, .8);
+}
+
+// -------------------------------------
+//   Story
+// -------------------------------------
+
+section.story {
+	z-index: 20;
+	background-color: #fff;
+	margin-top: -52px;
+	@include clip-path(polygon(0 10px, 10% 10px, 10% 15px, 17% 15px, 17% 0, 28% 0, 28% 20px, 43% 20px, 43% 50px, 60% 50px, 60% 10px, 72% 10px, 72% 32px, 83% 32px, 83% 16px, 90% 16px, 96% 16px, 96% 0, 100% 0, 100% 100%, 0 100%));
+	@include background-image(url('/images/old_map.png'));
+}
+
+// -------------------------------------
+//   Sponsors
+// -------------------------------------
+
+section.sponsors {
+	background-color: #eee;
+	color: #444;
+
+	$i: 1;
+
+	@while ($i < 100) {
+
+		.clogo:nth-of-type(#{$i}) {
+			@include span-columns(3);
+		}
+		.clogo:nth-of-type(#{$i + 1}) {
+			@include span-columns(4);
+		}
+		.clogo:nth-of-type(#{$i + 2}) {
+			@include span-columns(3 omega);
+		}
+		.clogo:nth-of-type(#{$i + 3}) {
+			@include span-columns(4);
+		}
+		.clogo:nth-of-type(#{$i + 4}) {
+			@include span-columns(2);
+		}
+		.clogo:nth-of-type(#{$i + 5}) {
+			@include span-columns(4 omega);
+		}
+
+		$i: $i + 6;
+	}
+
+	.clogo {
+		margin-bottom: 20px;
+	}
+}
+
+
+// -------------------------------------
+//   Vote
+// -------------------------------------
+
+section.vote {
+	article.role {
+		@include span-columns(2);
+		@include nth-omega(5);
+	}
+}
+
+// -------------------------------------
+//   Comments
+// -------------------------------------
+
+section.comments {
+
+	.wrapper{
+		padding-bottom: 0;
+	}
+
+	.comments {
+		margin-top: 50px;
+		text-align: center;
+	}
+}
