@@ -1,0 +1,10 @@
+<?php
+  $appId = 'xxxxxx';
+  $appSecret = 'xxxxxxxxxxxxxx';
+  $fbPermissions = 'publish_actions,email';
+
+  $db_username = "xxxxxx";
+  $db_password = "xxxxxx";
+  $hostname = "localhost";
+  $db_name = 'database_name';
+?>
