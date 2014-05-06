@@ -288,6 +288,17 @@ section.vote {
 	article.role {
 		@include span-columns(2);
 		@include nth-omega(5);
+
+		a.img{
+			overflow: hidden;
+
+			&:hover {
+				img {
+					@include filter(grayscale(100%));
+					@include scale(1.2, 1.2, 1.2, false);
+				}
+			}
+		}
 	}
 }
 

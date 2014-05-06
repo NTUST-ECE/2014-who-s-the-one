@@ -19,7 +19,7 @@
       .content
         %h1 迷失課
         %br
-        %a.play 
+        %a.play{'data-reveal-id' => "playVideo"}
           .inner 看影片
         %h2 2014台科大工程.管理.創設.電資四系聯合不分之夜!!!!
         %p 生命 是一場不可重演的舞台劇 青春即是導演 編寫回憶／五個人 五段人生 高校的青澀 大學的繽紛／互相交錯圍繞 迷失在時間劇本裡／究竟 誰是那個注定的一人 就讓我們一起找尋
@@ -115,3 +115,9 @@
     .comments
       :markdown
         <div class="fb-comments" data-href="http://who.ntust.co" data-numposts="10" data-colorscheme="light"></div>
+
+
+#playVideo.reveal-modal.medium{"data-reveal" => "", :style => 'padding: 0;'}
+  .flex-video
+    :markdown
+      <iframe width="853" height="480" src="//www.youtube.com/embed/La3xojtfL_U?rel=0" frameborder="0" allowfullscreen></iframe>
