@@ -33,16 +33,12 @@ function goVote() {
 	PatwFB.isFan("758597897493233",
 		function (response) {
 			$('#pleaseLike').foundation('reveal', 'close');
-			clearTimeout(timer);
-			start = false;
+			clearTimeout(checkLikeTimer);
 			Vote();
 		},
 		function (response) {
-			if(!start){
-				$('#pleaseLike').foundation('reveal', 'open');
-				start = true;
-			}
-			timer = setTimeout("isFan()", 1000);
+			$('#pleaseLike').foundation('reveal', 'open');
+			checkLikeTimer = setTimeout("goVote()", 1000);
 		}
 	);
 }

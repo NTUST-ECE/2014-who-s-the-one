@@ -132,22 +132,23 @@ html.han-la hanla:after {
 em:lang(zh), em:lang(ja) {
 
 	// ----- 不會影響垂直旋律的強調點 ----- //
-	@include experimental(text-emphasis, none, -moz, -webkit, -o, -ms, -khtml, official);
+	// @include experimental(text-emphasis, none, -moz, -webkit, -o, -ms, -khtml, official);
 
-	.char.cjk {
-		position: relative;
+	// .char.cjk {
+	// 	position: relative;
 
-		&::after {
-			content: "•";
-			display: block;
-			position: absolute;
-			top: 0.4em;
-			width: 100%;
-			text-align: center;
-		}
-	}
+	// 	&::after {
+	// 		content: "•";
+	// 		display: block;
+	// 		position: absolute;
+	// 		top: 0.4em;
+	// 		width: 100%;
+	// 		text-align: center;
+	// 	}
+	// }
 
 	.char.latin {
+		@include experimental(text-emphasis, none, -moz, -webkit, -o, -ms, -khtml, official);
 		font-style: italic;
 	}
 
