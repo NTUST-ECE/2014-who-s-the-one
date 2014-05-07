@@ -20,20 +20,7 @@ if(Modernizr.touch) {
 // AppID
 PatwFB.appId = '166332873401574';
 // Init
-PatwFB.init(function () {
-	PatwFB.setSize();
 
-	FB.getLoginStatus(function(response) {
-		if (response.status === 'connected') {
-			Facebook_Login();
-		} else if (response.status === 'not_authorized') {
-			// the user is logged in to Facebook,
-			// but has not authenticated your app
-		} else {
-			// the user isn't logged in to Facebook.
-		}
-	});
-});
 // scope. reference: https://developers.facebook.com/docs/reference/api/permissions/
 PatwFB.scope = "user_likes,email";
 
@@ -129,6 +116,36 @@ function Vote() {
 	});
 }
 
+$(function() {
+	PatwFB.init(function () {
+		PatwFB.setSize();
+
+		FB.getLoginStatus(function(response) {
+			if (response.status === 'connected') {
+				Facebook_Login();
+			} else if (response.status === 'not_authorized') {
+				// the user is logged in to Facebook,
+				// but has not authenticated your app
+			} else {
+				// the user isn't logged in to Facebook.
+			}
+		});
+	});
+
+	$('a[href*=#]:not([href=#])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			if (target.length) {
+				$('html,body').animate({
+					scrollTop: target.offset().top
+				}, 1000);
+				return false;
+			}
+		}
+	});
+});
+
 window.onload = function () {
 	$('.welcome .video').css('background-image', "url('/images/bgv.gif')");
 };
@@ -149,17 +166,3 @@ $(window).scroll(function () {
 
 });
 
-$(function() {
-	$('a[href*=#]:not([href=#])').click(function() {
-		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			var target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			if (target.length) {
-				$('html,body').animate({
-					scrollTop: target.offset().top
-				}, 1000);
-				return false;
-			}
-		}
-	});
-});
