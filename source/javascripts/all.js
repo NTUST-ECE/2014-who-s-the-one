@@ -117,20 +117,23 @@ function Vote() {
 }
 
 $(function() {
-	PatwFB.init(function () {
-		PatwFB.setSize();
 
-		FB.getLoginStatus(function(response) {
-			if (response.status === 'connected') {
-				Facebook_Login();
-			} else if (response.status === 'not_authorized') {
-				// the user is logged in to Facebook,
-				// but has not authenticated your app
-			} else {
-				// the user isn't logged in to Facebook.
-			}
+	setTimeout(function(){
+		PatwFB.init(function () {
+			PatwFB.setSize();
+
+			FB.getLoginStatus(function(response) {
+				if (response.status === 'connected') {
+					Facebook_Login();
+				} else if (response.status === 'not_authorized') {
+					// the user is logged in to Facebook,
+					// but has not authenticated your app
+				} else {
+					// the user isn't logged in to Facebook.
+				}
+			});
 		});
-	});
+	}, 1000);
 
 	$('a[href*=#]:not([href=#])').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
