@@ -26,6 +26,7 @@ body {
 	margin: 0;
 	padding: 0;
 	min-height: 100%;
+	min-width: 1000px;
 	// overflow-x: hidden;
 
 	* {
@@ -39,18 +40,16 @@ body {
 
 body > section {
 	overflow: hidden;
-	min-width: 1000px;
 	padding: 0 30px;
 }
 
 
-body > section > div {
+body > section > div.wrapper {
 	@include container($total-columns);
 	@include pie-clearfix;
 	position: relative;
 	padding: 100px 0;
 	max-width: 1250px;
-	min-width: 1000px;
 	overflow-x: hidden;
 }
 
@@ -115,6 +114,7 @@ section.welcome {
 	position: relative;
 	padding-top: 0;
 	@include transition-duration(0s);
+	font-family: "datm7", $base-serif-fontFamily;
 
 	* {
 		color: $white;
@@ -239,6 +239,33 @@ section.story {
 	margin-top: -52px;
 	@include clip-path(polygon(0 10px, 10% 10px, 10% 15px, 17% 15px, 17% 0, 28% 0, 28% 20px, 43% 20px, 43% 50px, 60% 50px, 60% 10px, 72% 10px, 72% 32px, 83% 32px, 83% 16px, 90% 16px, 96% 16px, 96% 0, 100% 0, 100% 100%, 0 100%));
 	@include background-image(url('/images/old_map.png'));
+
+	p {
+		font-family: "datf5", $base-sansSerif-fontFamily;
+		@include rhythm-to(0, 0, 0, 1, 18px);
+	}
+
+	h1, h1 small {
+		font-family: "chekiangshukesung", $base-sansSerif-fontFamily;
+	}
+
+	.img {
+		@include span-columns(3);
+		@include pre(1);
+	}
+
+	.text {
+		@include span-columns(4 omega);
+		@include post(2);
+	}
+
+	a.inverse {
+		display: inline-block;
+		background-color: #463F31;
+		color: #eee;
+		padding: 0 6px;
+		padding-top: 5px;
+	}
 }
 
 // -------------------------------------
@@ -322,6 +349,18 @@ section.vote {
 		margin-right: 20px;
 		margin-bottom: 20px;
 	}
+}
+
+// -------------------------------------
+//   Location
+// -------------------------------------
+
+section.location {
+
+	.wrapper{
+		padding-bottom: 0;
+	}
+
 }
 
 // -------------------------------------

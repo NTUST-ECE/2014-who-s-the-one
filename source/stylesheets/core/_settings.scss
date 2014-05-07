@@ -58,9 +58,9 @@ $base-boxShadow: 0 1px 2px rgba($base-color, 0.25);
 $base-font-size: 16px;
 $base-line-height: $base-font-size * 3/2;
 
-$base-sansSerif-fontFamily: "蘋果儷中黑", "微軟正黑體", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-sansSerif-fontFamily: "xingothic-tc-w3", "蘋果儷中黑", "微軟正黑體", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-serif-fontFamily: "datm5", "蘋果儷細宋", "Adobe 明體", "Times New Roman", Times, serif;
-$base-fontFamily: $base-serif-fontFamily;
+$base-fontFamily: $base-sansSerif-fontFamily;
 $base-fontSize: 16px;
 $base-lineHeight: $base-line-height;
 

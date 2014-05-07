@@ -9,6 +9,8 @@
     %li
       %a{href: "#vote"} Vote
     %li
+      %a{href: "#location"} Location
+    %li
       %a{href: "#comments"} Comments
 
 %section.welcome#welcome
@@ -40,20 +42,20 @@
       %small Story
 
     .img= image_tag lorem.image('300x400')
+    .text
+      :markdown
 
-    :markdown
+        「一定得有人犧牲，除了動手，沒有任何規則！接下來的課裡，唯一的目的就是<b>選出一個被犧牲的人</b>。」
 
-      「一定得有人犧牲，除了動手，沒有任何規則！接下來的課裡，唯一的目的就是<b>選出一個被犧牲的人</b>。」
+        1884 年 7 月，一艘遊船在南大西洋離岸 1300 英里處失事漂流，救生船上僅有 4 名船員，船長，杜德利、大副，史蒂芬、水手，布魯克，最後是 17 歲孤兒出身的船艙服務員，理查帕克。
 
-      1884 年 7 月，一艘遊船在南大西洋離岸 1300 英里處失事漂流，救生船上僅有 4 名船員，船長，杜德利、大副，史蒂芬、水手，布魯克，最後是 17 歲孤兒出身的船艙服務員，理查帕克。
+        帕克因飲用海水而致病，缺少淡水和食物的第20天時，杜德利在史蒂芬同意下後殺死男孩帕克，此 3 人也因此存活到救援到來。 
 
-      帕克因飲用海水而致病，缺少淡水和食物的第20天時，杜德利在史蒂芬同意下後殺死男孩帕克，此 3 人也因此存活到救援到來。 
+        此為英國史上最大爭議訴訟案，<u>女王訴杜德利與史蒂芬案</u> *(R v. Dudley and Stephens 1884)*。
 
-      此為英國史上最大爭議訴訟案，<u>女王訴杜德利與史蒂芬案</u> *(R v. Dudley and Stephens 1884)*。
+        今天若換作是你，是否能為了生存，對素昧平生的他人下手？而那又是誰該犧牲？
 
-      今天若換作是你，是否能為了生存，對素昧平生的他人下手？而那又是誰該犧牲？
-
-      Who’s the better, who’s not? Who is The One? You decided. 
+        Who's the better, who's not? Who is The One? <a class="inverse" href="#vote">You decided.</a> 現在由你決定！
 
 %section.sponsors#sponsors
   .wrapper
@@ -115,6 +117,9 @@
 
 %section.location#location
   .wrapper
+.map
+  :markdown
+    <div id="map_canvas" style="width: 100%; height: 400px"></div>
 
 %section.comments#comments
   .wrapper

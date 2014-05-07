@@ -160,6 +160,7 @@ $(function() {
 window.onload = function () {
 	refreshViev();
 	$('.welcome .video').css('background-image', "url('/images/bgv.gif')");
+	initialize();
 };
 
 $(window).scroll(function () {
@@ -181,3 +182,31 @@ $(window).scroll(function () {
 $(window).resize(function() {
 	refreshViev();
 });
+
+function initialize() {
+	var myLatlng = new google.maps.LatLng(25.0141731, 121.5416485);
+
+	var myOptions = {
+		zoom: 17,
+		center: myLatlng,
+	    scrollwheel: false
+	}
+
+	var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+	var infowindow = new google.maps.InfoWindow({
+		content: ""
+	});
+
+	var marker = new google.maps.Marker({
+		position: myLatlng,
+		icon: '/images/map_icon.png',
+		shadow: '/images/map_icon.png',
+		map: map,
+		title: ""
+	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.open(map,marker);
+	});
+}
