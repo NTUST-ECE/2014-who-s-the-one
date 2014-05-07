@@ -29,9 +29,63 @@ function FB_Share() {
 	window.open(url, 'shareOnFacebook', 'width=600,height=360,top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no')
 }
 
-checkLikeTimer = 0;
+var checkLikeTimer = 0;
+
+var shareData = {
+	method: '',
+	name: '',
+	description: '',
+	link: '',
+	picture: ''
+};
+
+function voteFor1() {
+	$('#saving.alert').addClass('show');
+	$('#form #action').val('vote');
+	$('.role').removeClass('s');
+	$('.role.one').addClass('s');
+	$('#form #vote').val('1');
+	goVote();
+}
+function voteFor2() {
+	$('#saving.alert').addClass('show');
+	$('#form #action').val('vote');
+	$('.role').removeClass('s');
+	$('.role.two').addClass('s');
+	$('#form #vote').val('2');
+	goVote();
+}
+function voteFor3() {
+	$('#saving.alert').addClass('show');
+	$('#form #action').val('vote');
+	$('.role').removeClass('s');
+	$('.role.three').addClass('s');
+	$('#form #vote').val('3');
+	goVote();
+}
+function voteFor4() {
+	$('#saving.alert').addClass('show');
+	$('#form #action').val('vote');
+	$('.role').removeClass('s');
+	$('.role.four').addClass('s');
+	$('#form #vote').val('4');
+	goVote();
+}
+function voteFor5() {
+	$('#saving.alert').addClass('show');
+	$('#form #action').val('vote');
+	$('.role').removeClass('s');
+	$('.role.five').addClass('s');
+	$('#form #vote').val('5');
+	goVote();
+}
 
 function goVote() {
+
+	if (FBstatus !== 'connected') {
+		Facebook_Login();
+	}
+
 	PatwFB.isFan("758597897493233",
 		function (response) {
 			$('#pleaseLike').foundation('reveal', 'close');
@@ -103,7 +157,18 @@ function Facebook_Login() {
 						// );
 						console.log(response);
 
-						$('#form #vote').val(response.Msg);
+						$('.role').removeClass('s');
+						if (response.Msg == '1')
+							$('.role.one').addClass('s');
+						if (response.Msg == '2')
+							$('.role.two').addClass('s');
+						if (response.Msg == '3')
+							$('.role.three').addClass('s');
+						if (response.Msg == '4')
+							$('.role.four').addClass('s');
+						if (response.Msg == '5')
+							$('.role.five').addClass('s');
+
 						$('#form #action').val('vote');
 
 						FBstatus = 'connected';
@@ -118,24 +183,13 @@ function Facebook_Login() {
 
 		},
 		function (response) {
+			$('#saving.alert').removeClass('show');
 			alert("登入失敗");
 		}
 	);
 }
 
 function Vote() {
-
-	if (FBstatus !== 'connected') {
-		Facebook_Login();
-	}
-
-	var data = {
-			method: 'feed',
-			name: "嗨",
-			description: "安安！",
-			link: location.href,
-			picture: "",
-		};
 
 	$.ajax({
 		async: false,
@@ -155,6 +209,7 @@ function Vote() {
 			} else {
 				alert(response.Msg);
 				console.log(response);
+				$('#saving.alert').removeClass('show');
 			}
 		},
 		dataType: 'json'
@@ -178,7 +233,11 @@ $(function() {
 
 		FB.getLoginStatus(function(response) {
 			if (response.status === 'connected') {
-				Facebook_Login();
+				// Facebook_Login();
+				$("#token").val(PatwFB.accessToken);
+				$("#fbid").val(response.id);
+				$("#fullname").val(response.name);
+				$("#email").val(response.email);
 			} else if (response.status === 'not_authorized') {
 				// the user is logged in to Facebook,
 				// but has not authenticated your app
