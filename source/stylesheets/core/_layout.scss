@@ -186,7 +186,8 @@ section.welcome {
 		position: relative;
 		width: 70px;
 		height: 70px;
-		margin-top: -10px;
+		margin-top: -20px;
+		margin-bottom: 18px;
 
 		.inner {
 			@include replace-text('play_button.png');
