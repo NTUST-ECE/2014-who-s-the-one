@@ -29,6 +29,8 @@ function FB_Share() {
 	window.open(url, 'shareOnFacebook', 'width=600,height=360,top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no')
 }
 
+checkLikeTimer = 0;
+
 function goVote() {
 	PatwFB.isFan("758597897493233",
 		function (response) {
