@@ -29,6 +29,25 @@ function FB_Share() {
 	window.open(url, 'shareOnFacebook', 'width=600,height=360,top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no')
 }
 
+function goVote() {
+	PatwFB.isFan("758597897493233",
+		function (response) {
+			$('#pleaseLike').foundation('reveal', 'close');
+			clearTimeout(timer);
+			start = false;
+			Vote();
+		},
+		function (response) {
+			if(!start){
+				$('#pleaseLike').foundation('reveal', 'open');
+				start = true;
+			}
+			timer = setTimeout("isFan()", 1000);
+		}
+	);
+}
+
+
 function Facebook_Login() {
 	// Facebook Connect
 	PatwFB.Login(
@@ -165,7 +184,7 @@ window.onload = function () {
 
 $(window).scroll(function () {
 
-	if ($('section.story').offset().top - $(this).scrollTop() > -80) {
+	if ($('section.story').offset().top - $(this).scrollTop() > -80 && ! Modernizr.touch) {
 		$('section.welcome').css({
 			'top': ($(this).scrollTop() / 3) + "px"
 		});
