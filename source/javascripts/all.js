@@ -32,10 +32,10 @@ function FB_Share() {
 var checkLikeTimer = 0;
 
 var shareData = {
-	method: '',
+	method: 'feed',
 	name: '',
-	description: '',
-	link: '',
+	description: "史上最強企劃！創設、工程、電資、管理，四系聯合，攜手打造夢幻之夜！現在投票預測結局，就有機會抽大獎！ ... 生命 是一場不可重演的舞台劇 青春即是導演 編寫回憶／五個人 五段人生 高校的青澀 大學的繽紛／互相交錯圍繞 迷失在時間劇本裡／究竟 誰是那個注定的一人 就讓我們一起找尋／Who's the one ?",
+	link: 'http://who.ntust.co',
 	picture: ''
 };
 
@@ -47,6 +47,7 @@ function voteFor1() {
 	$('.role').removeClass('s');
 	$('.role.one').addClass('s');
 	$('#form #vote').val('1');
+	shareData.name = '我剛剛在「迷失課」中選擇犧牲了 溫拿';
 	goVote();
 }
 function voteFor2() {
@@ -55,6 +56,7 @@ function voteFor2() {
 	$('.role').removeClass('s');
 	$('.role.two').addClass('s');
 	$('#form #vote').val('2');
+	shareData.name = '我剛剛在「迷失課」中選擇犧牲了 萱姊';
 	goVote();
 }
 function voteFor3() {
@@ -63,6 +65,7 @@ function voteFor3() {
 	$('.role').removeClass('s');
 	$('.role.three').addClass('s');
 	$('#form #vote').val('3');
+	shareData.name = '我剛剛在「迷失課」中選擇犧牲了 芸芸';
 	goVote();
 }
 function voteFor4() {
@@ -71,6 +74,7 @@ function voteFor4() {
 	$('.role').removeClass('s');
 	$('.role.four').addClass('s');
 	$('#form #vote').val('4');
+	shareData.name = '我剛剛在「迷失課」中選擇犧牲了 小斌';
 	goVote();
 }
 function voteFor5() {
@@ -79,6 +83,7 @@ function voteFor5() {
 	$('.role').removeClass('s');
 	$('.role.five').addClass('s');
 	$('#form #vote').val('5');
+	shareData.name = '我剛剛在「迷失課」中選擇犧牲了 阿風';
 	goVote();
 }
 
@@ -200,13 +205,12 @@ function Vote() {
 		data: $('#form').serialize(),
 		success: function (response) {
 			if (response.Success == "1") {
-				// PatwFB.PublishUI(data,
-				// 	function (rs) {
-				// 		trackEvent('personal','voteperson_share');
-				// 	},
-				// 	function (rs) {
-				// 	}
-				// );
+				PatwFB.PublishUI(shareData,
+					function (rs) {
+					},
+					function (rs) {
+					}
+				);
 				console.log(response);
 				$('#saving.alert').removeClass('show');
 				$('#success.alert').addClass('show');
