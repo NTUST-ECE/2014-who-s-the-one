@@ -6,6 +6,17 @@
 // foundation
 $(document).foundation();
 
+if (window.chrome) {
+	isChrome = true;
+	$('body').addClass('chrome');
+}
+if(Modernizr.touch) {
+	isTouch = true;
+	$('body').addClass('touch');
+} else {
+ 	$('body').addClass('non-touch');
+}
+
 // AppID
 PatwFB.appId = '166332873401574';
 // Init
