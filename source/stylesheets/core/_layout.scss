@@ -259,12 +259,12 @@ section.story {
 	@include background-image(url('/images/old_map.png'));
 
 	p {
-		font-family: "datf5", $base-sansSerif-fontFamily;
+		font-family: "datf5", $base-serif-fontFamily;
 		@include rhythm-to(0, 0, 0, 1, 18px);
 	}
 
 	h1, h1 small {
-		font-family: "chekiangshukesung", $base-sansSerif-fontFamily;
+		font-family: "chekiangshukesung", $base-serif-fontFamily;
 	}
 
 	.img {
@@ -338,6 +338,7 @@ section.vote {
 
 		h1 {
 			font-size: 2em;
+			font-family: "xingothic-tc-w4", $base-sansSerif-fontFamily;
 		}
 
 		a.img{

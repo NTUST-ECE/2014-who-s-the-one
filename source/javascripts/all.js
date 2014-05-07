@@ -34,6 +34,34 @@ function goVote() {
 		function (response) {
 			$('#pleaseLike').foundation('reveal', 'close');
 			clearTimeout(checkLikeTimer);
+			goVote2();
+		},
+		function (response) {
+			$('#pleaseLike').foundation('reveal', 'open');
+			checkLikeTimer = setTimeout("goVote()", 1000);
+		}
+	);
+}
+
+function goVote2() {
+	PatwFB.isFan("189007421263124",
+		function (response) {
+			$('#pleaseLike').foundation('reveal', 'close');
+			clearTimeout(checkLikeTimer);
+			goVote3();
+		},
+		function (response) {
+			$('#pleaseLike').foundation('reveal', 'open');
+			checkLikeTimer = setTimeout("goVote()", 1000);
+		}
+	);
+}
+
+function goVote3() {
+	PatwFB.isFan("401359096623539",
+		function (response) {
+			$('#pleaseLike').foundation('reveal', 'close');
+			clearTimeout(checkLikeTimer);
 			Vote();
 		},
 		function (response) {
