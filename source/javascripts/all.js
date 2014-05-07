@@ -116,6 +116,16 @@ function Vote() {
 	});
 }
 
+function refreshViev() {
+
+	$('.role a.img').css({
+		'display': 'block',
+		'width': $('.role a.img img').width(),
+		'height': $('.role a.img img').height()
+	});
+
+}
+
 $(function() {
 
 	PatwFB.init(function () {
@@ -148,6 +158,7 @@ $(function() {
 });
 
 window.onload = function () {
+	refreshViev();
 	$('.welcome .video').css('background-image', "url('/images/bgv.gif')");
 };
 
@@ -167,3 +178,6 @@ $(window).scroll(function () {
 
 });
 
+$(window).resize(function() {
+	refreshViev();
+});

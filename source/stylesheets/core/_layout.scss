@@ -110,7 +110,7 @@ body > section > div {
 section.welcome {
 	// position: fixed;
 	height: 95vh;
-	min-height: 800px;
+	min-height: 700px;
 	background-color: #aaa;
 	position: relative;
 	padding-top: 0;
@@ -126,7 +126,7 @@ section.welcome {
 		width: 100vw;
 		min-width: 1000px;
 		height: 100vh;
-		min-height: 800px;
+		min-height: 700px;
 		max-width: none;
 		top: 0;
 		left: 0;
@@ -140,7 +140,7 @@ section.welcome {
 		width: 100vw;
 		min-width: 1000px;
 		height: 100vh;
-		min-height: 800px;
+		min-height: 700px;
 		max-width: none;
 		@include background-image(url('/images/background.png'));
 		background-repeat: repeat;
@@ -289,16 +289,37 @@ section.vote {
 		@include span-columns(2);
 		@include nth-omega(5);
 
+		h1 {
+			font-size: 2em;
+		}
+
 		a.img{
 			overflow: hidden;
+
+			img {
+				// @include transition-property(filter, scale);
+				// @include transition-delay(.2);
+				@include transition-duration(.4s);
+			}
 
 			&:hover {
 				img {
 					@include filter(grayscale(100%));
-					@include scale(1.2, 1.2, 1.2, false);
+					@include scale(1.1, 1.1, 1.1, false);
+					@include transition-delay(0s);
+					@include transition-duration(1s);
 				}
 			}
 		}
+	}
+}
+
+.reveal-modal.role {
+	.img {
+		width: 40%;
+		float: left;
+		margin-right: 20px;
+		margin-bottom: 20px;
 	}
 }
 
