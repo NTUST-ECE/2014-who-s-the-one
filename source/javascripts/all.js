@@ -54,7 +54,7 @@ function goVote2() {
 		},
 		function (response) {
 			$('#pleaseLike').foundation('reveal', 'open');
-			checkLikeTimer = setTimeout("goVote()", 1000);
+			checkLikeTimer = setTimeout("goVote2()", 1000);
 		}
 	);
 }
@@ -68,7 +68,7 @@ function goVote3() {
 		},
 		function (response) {
 			$('#pleaseLike').foundation('reveal', 'open');
-			checkLikeTimer = setTimeout("goVote()", 1000);
+			checkLikeTimer = setTimeout("goVote3()", 1000);
 		}
 	);
 }
