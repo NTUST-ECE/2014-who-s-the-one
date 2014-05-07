@@ -208,6 +208,9 @@ function Vote() {
 				// 	}
 				// );
 				console.log(response);
+				$('#saving.alert').removeClass('show');
+				$('#success.alert').addClass('show');
+				setTimeout(function(){$('#success.alert').removeClass('show')}, 3000);
 			} else {
 				alert(response.Msg);
 				console.log(response);
@@ -235,11 +238,7 @@ $(function() {
 
 		FB.getLoginStatus(function(response) {
 			if (response.status === 'connected') {
-				// Facebook_Login();
-				$("#token").val(PatwFB.accessToken);
-				$("#fbid").val(response.id);
-				$("#fullname").val(response.name);
-				$("#email").val(response.email);
+				Facebook_Login();
 			} else if (response.status === 'not_authorized') {
 				// the user is logged in to Facebook,
 				// but has not authenticated your app
