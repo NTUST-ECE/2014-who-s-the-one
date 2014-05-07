@@ -39,6 +39,8 @@ var shareData = {
 	picture: ''
 };
 
+var FBstatus = '';
+
 function voteFor1() {
 	$('#saving.alert').addClass('show');
 	$('#form #action').val('vote');
