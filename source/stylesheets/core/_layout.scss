@@ -374,6 +374,10 @@ section.vote {
 			font-family: "xingothic-tc-w4", $base-sansSerif-fontFamily;
 		}
 
+		.vote.button {
+			width: 100%;
+		}
+
 		a.img{
 			overflow: hidden;
 
