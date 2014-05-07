@@ -399,6 +399,26 @@ section.vote {
 	}
 }
 
+.role {
+	.vote.button {
+		display: block;
+	}
+
+	.vote.button.disabled {
+		display: none;
+	}
+}
+
+.role.s {
+	.vote.button {
+		display: none;
+	}
+
+	.vote.button.disabled {
+		display: block;
+	}
+}
+
 .reveal-modal.role {
 	.img {
 		width: 40%;
