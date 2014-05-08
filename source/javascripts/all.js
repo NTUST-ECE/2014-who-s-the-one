@@ -24,11 +24,6 @@ PatwFB.appId = '166332873401574';
 // scope. reference: https://developers.facebook.com/docs/reference/api/permissions/
 PatwFB.scope = "user_likes,email";
 
-function FB_Share() {
-	var url = 'http://www.facebook.com/sharer.php?u=' + encodeURIComponent(location.href)
-	window.open(url, 'shareOnFacebook', 'width=600,height=360,top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no')
-}
-
 var checkLikeTimer = 0;
 
 var shareData = {
@@ -42,6 +37,9 @@ var shareData = {
 var FBstatus = '';
 
 function voteFor1() {
+	if (FBstatus !== 'connected') {
+		Facebook_Login();
+	}
 	$('#saving.alert').addClass('show');
 	$('#form #action').val('vote');
 	$('.role').removeClass('s');
@@ -51,6 +49,9 @@ function voteFor1() {
 	goVote();
 }
 function voteFor2() {
+	if (FBstatus !== 'connected') {
+		Facebook_Login();
+	}
 	$('#saving.alert').addClass('show');
 	$('#form #action').val('vote');
 	$('.role').removeClass('s');
@@ -60,6 +61,9 @@ function voteFor2() {
 	goVote();
 }
 function voteFor3() {
+	if (FBstatus !== 'connected') {
+		Facebook_Login();
+	}
 	$('#saving.alert').addClass('show');
 	$('#form #action').val('vote');
 	$('.role').removeClass('s');
@@ -69,6 +73,9 @@ function voteFor3() {
 	goVote();
 }
 function voteFor4() {
+	if (FBstatus !== 'connected') {
+		Facebook_Login();
+	}
 	$('#saving.alert').addClass('show');
 	$('#form #action').val('vote');
 	$('.role').removeClass('s');
@@ -78,6 +85,9 @@ function voteFor4() {
 	goVote();
 }
 function voteFor5() {
+	if (FBstatus !== 'connected') {
+		Facebook_Login();
+	}
 	$('#saving.alert').addClass('show');
 	$('#form #action').val('vote');
 	$('.role').removeClass('s');
@@ -155,13 +165,6 @@ function Facebook_Login() {
 				data: $('#form').serialize(),
 				success: function (response) {
 					if (response.Success == "1") {
-						// PatwFB.PublishUI(data,
-						// 	function (rs) {
-						// 		trackEvent('personal','voteperson_share');
-						// 	},
-						// 	function (rs) {
-						// 	}
-						// );
 						console.log(response);
 
 						$('.role').removeClass('s');
