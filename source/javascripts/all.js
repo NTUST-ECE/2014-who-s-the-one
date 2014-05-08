@@ -280,6 +280,14 @@ $(window).scroll(function () {
 		});
 	}
 
+	if ($('section.sponsors').offset().top + $('section.sponsors').height() - $(this).scrollTop() >  0
+ && ($('section.sponsors').offset().top - $(this).scrollTop() - $(window).height()) < 10 && ! Modernizr.touch) {
+		$('section.sponsors .wrapper').css({
+			'margin-top': 200*(($(this).scrollTop() - $('section.sponsors').offset().top + $(window).height() ) / $(window).height() - 1) + "px",
+			'margin-bottom': -200*(($(this).scrollTop() - $('section.sponsors').offset().top + $(window).height() ) / $(window).height() - 1) + "px"
+		});
+	}
+
 	if ($(this).scrollTop() > 3) {
 		$('.top-bar').addClass('show');
 	} else {

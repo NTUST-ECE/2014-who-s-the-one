@@ -284,12 +284,16 @@ body.non-touch .after-welcome {
 //   Story
 // -------------------------------------
 
+body.chrome section.story {
+	padding-bottom: 60px;
+}
+
 section.story {
 	z-index: 20;
 	background-color: #fff;
+	@include background-image(url('/images/old_map.png'));
 	margin-top: -52px;
 	@include clip-path(polygon(0 10px, 10% 10px, 10% 15px, 17% 15px, 17% 0, 28% 0, 28% 20px, 43% 20px, 43% 50px, 60% 50px, 60% 10px, 72% 10px, 72% 32px, 83% 32px, 83% 16px, 90% 16px, 96% 16px, 96% 0, 100% 0, 100% 100%, 0 100%));
-	@include background-image(url('/images/old_map.png'));
 
 	p {
 		font-family: "datf5", $base-serif-fontFamily;
@@ -324,9 +328,17 @@ section.story {
 //   Sponsors
 // -------------------------------------
 
+body.chrome section.sponsors {
+	margin-top: -52px;
+	@include clip-path(polygon(0 12px, 8% 12px, 8% 40px, 12% 40px, 12% 10px, 31% 10px, 31% 1px, 45% 1px, 45% 24px, 62% 24px, 62% 50px, 70% 50px, 70% 3px, 80% 3px, 80% 12px, 96% 12px, 96% 40px, 100% 40px, 100% 100%, 0 100%));
+}
+
 section.sponsors {
 	background-color: #eee;
 	color: #444;
+	@include transition-duration(0s);
+
+	.wrapper { @include transition-duration(0s); }
 
 	$i: 1;
 
@@ -364,7 +376,16 @@ section.sponsors {
 //   Vote
 // -------------------------------------
 
+body.chrome section.vote {
+	margin-top: -52px;
+	@include clip-path(polygon(0 10px, 10% 10px, 10% 15px, 17% 15px, 17% 0, 28% 0, 28% 20px, 43% 20px, 43% 50px, 60% 50px, 60% 10px, 72% 10px, 72% 32px, 83% 32px, 83% 16px, 90% 16px, 96% 16px, 96% 0, 100% 0, 100% 100%, 0 100%));
+}
+
 section.vote {
+
+	background-color: #fff;
+
+
 	article.role {
 		@include span-columns(2);
 		@include nth-omega(5);
@@ -432,7 +453,13 @@ section.vote {
 //   Location
 // -------------------------------------
 
+body.chrome section.location {
+	margin-top: -52px;
+	@include clip-path(polygon(0 10px, 10% 10px, 10% 15px, 17% 15px, 17% 0, 28% 0, 28% 20px, 43% 20px, 43% 50px, 60% 50px, 60% 10px, 72% 10px, 72% 32px, 83% 32px, 83% 16px, 90% 16px, 96% 16px, 96% 0, 100% 0, 100% 100%, 0 100%));
+}
+
 section.location {
+
 
 	.wrapper{
 		padding-bottom: 0;
@@ -443,6 +470,11 @@ section.location {
 // -------------------------------------
 //   Comments
 // -------------------------------------
+
+body.chrome section.comments {
+	margin-top: -52px;
+	@include clip-path(polygon(0 10px, 10% 10px, 10% 15px, 17% 15px, 17% 0, 28% 0, 28% 20px, 43% 20px, 43% 50px, 60% 50px, 60% 10px, 72% 10px, 72% 32px, 83% 32px, 83% 16px, 90% 16px, 96% 16px, 96% 0, 100% 0, 100% 100%, 0 100%));
+}
 
 section.comments {
 
