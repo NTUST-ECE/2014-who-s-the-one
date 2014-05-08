@@ -144,7 +144,7 @@ var PatwFB = window.PatwFB || {};
         // Ask permissions
         // =====================================================================
         requestPerm: function (perm_list) {
-            if (!PatwFB.CheckPerm(perm_list)) {
+            // if (!PatwFB.CheckPerm(perm_list)) {
                 this.request_perm_count += 1;
                 if (this.request_perm_count > 1) {
                     this.request_perm_count = 0;
@@ -152,9 +152,9 @@ var PatwFB = window.PatwFB || {};
                     this.scope = perm_list;
                     PatwFB.Login();
                 }
-            } else {
-                return true;
-            }
+            // } else {
+                // return true;
+            // }
 
             return false;
         },
