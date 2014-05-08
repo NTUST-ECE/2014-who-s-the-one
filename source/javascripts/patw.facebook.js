@@ -205,7 +205,7 @@ var PatwFB = window.PatwFB || {};
 
                 } else if (response.status === 'not_authorized') {
 
-                    FB.login(PatwFB.scope, function (response) {
+                    FB.login(function (response) {
                         if (response.authResponse) {
 
                             PatwFB.userInfo();
@@ -226,12 +226,12 @@ var PatwFB = window.PatwFB || {};
                                 PatwFB.log(response);
                             }
                         }
-                    });
+                    }, {scope: PatwFB.scope});
 
                 }
             });
 
-            FB.login(PatwFB.scope, {scope: PatwFB.scope});
+            FB.login(undefined, {scope: PatwFB.scope});
         },
         Logout: function (callback) {
             FB.logout(function (response) {
