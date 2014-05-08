@@ -52,6 +52,7 @@ function voteFor1() {
 		$('.role.one').addClass('s');
 		$('#form #vote').val('1');
 		shareData.name = '我剛剛在「迷失課」中選擇犧牲了 溫拿';
+		shareData.picture = 'http://i.imgur.com/sTKvplZ.png';
 		goVote();
 	}
 }
@@ -65,6 +66,7 @@ function voteFor2() {
 		$('.role.two').addClass('s');
 		$('#form #vote').val('2');
 		shareData.name = '我剛剛在「迷失課」中選擇犧牲了 萱姊';
+		shareData.picture = 'http://i.imgur.com/FHc8bzp.png';
 		goVote();
 	}
 }
@@ -78,6 +80,7 @@ function voteFor3() {
 		$('.role.three').addClass('s');
 		$('#form #vote').val('3');
 		shareData.name = '我剛剛在「迷失課」中選擇犧牲了 芸芸';
+		shareData.picture = 'http://i.imgur.com/36RLeCx.png';
 		goVote();
 	}
 }
@@ -91,6 +94,7 @@ function voteFor4() {
 		$('.role.four').addClass('s');
 		$('#form #vote').val('4');
 		shareData.name = '我剛剛在「迷失課」中選擇犧牲了 小斌';
+		shareData.picture = 'http://i.imgur.com/ubbLHWI.png';
 		goVote();
 	}
 }
@@ -104,6 +108,7 @@ function voteFor5() {
 		$('.role.five').addClass('s');
 		$('#form #vote').val('5');
 		shareData.name = '我剛剛在「迷失課」中選擇犧牲了 阿風';
+		shareData.picture = 'http://i.imgur.com/Epfijm7.png';
 		goVote();
 	}
 }
