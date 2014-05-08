@@ -39,62 +39,67 @@ var FBstatus = '';
 function voteFor1() {
 	if (FBstatus !== 'connected') {
 		Facebook_Login();
+	} else {
+		$('#saving.alert').addClass('show');
+		$('#form #action').val('vote');
+		$('.role').removeClass('s');
+		$('.role.one').addClass('s');
+		$('#form #vote').val('1');
+		shareData.name = '我剛剛在「迷失課」中選擇犧牲了 溫拿';
+		goVote();
 	}
-	$('#saving.alert').addClass('show');
-	$('#form #action').val('vote');
-	$('.role').removeClass('s');
-	$('.role.one').addClass('s');
-	$('#form #vote').val('1');
-	shareData.name = '我剛剛在「迷失課」中選擇犧牲了 溫拿';
-	goVote();
 }
 function voteFor2() {
 	if (FBstatus !== 'connected') {
 		Facebook_Login();
+	} else {
+		$('#saving.alert').addClass('show');
+		$('#form #action').val('vote');
+		$('.role').removeClass('s');
+		$('.role.two').addClass('s');
+		$('#form #vote').val('2');
+		shareData.name = '我剛剛在「迷失課」中選擇犧牲了 萱姊';
+		goVote();
 	}
-	$('#saving.alert').addClass('show');
-	$('#form #action').val('vote');
-	$('.role').removeClass('s');
-	$('.role.two').addClass('s');
-	$('#form #vote').val('2');
-	shareData.name = '我剛剛在「迷失課」中選擇犧牲了 萱姊';
-	goVote();
 }
 function voteFor3() {
 	if (FBstatus !== 'connected') {
 		Facebook_Login();
+	} else {
+		$('#saving.alert').addClass('show');
+		$('#form #action').val('vote');
+		$('.role').removeClass('s');
+		$('.role.three').addClass('s');
+		$('#form #vote').val('3');
+		shareData.name = '我剛剛在「迷失課」中選擇犧牲了 芸芸';
+		goVote();
 	}
-	$('#saving.alert').addClass('show');
-	$('#form #action').val('vote');
-	$('.role').removeClass('s');
-	$('.role.three').addClass('s');
-	$('#form #vote').val('3');
-	shareData.name = '我剛剛在「迷失課」中選擇犧牲了 芸芸';
-	goVote();
 }
 function voteFor4() {
 	if (FBstatus !== 'connected') {
 		Facebook_Login();
+	} else {
+		$('#saving.alert').addClass('show');
+		$('#form #action').val('vote');
+		$('.role').removeClass('s');
+		$('.role.four').addClass('s');
+		$('#form #vote').val('4');
+		shareData.name = '我剛剛在「迷失課」中選擇犧牲了 小斌';
+		goVote();
 	}
-	$('#saving.alert').addClass('show');
-	$('#form #action').val('vote');
-	$('.role').removeClass('s');
-	$('.role.four').addClass('s');
-	$('#form #vote').val('4');
-	shareData.name = '我剛剛在「迷失課」中選擇犧牲了 小斌';
-	goVote();
 }
 function voteFor5() {
 	if (FBstatus !== 'connected') {
 		Facebook_Login();
+	} else {
+		$('#saving.alert').addClass('show');
+		$('#form #action').val('vote');
+		$('.role').removeClass('s');
+		$('.role.five').addClass('s');
+		$('#form #vote').val('5');
+		shareData.name = '我剛剛在「迷失課」中選擇犧牲了 阿風';
+		goVote();
 	}
-	$('#saving.alert').addClass('show');
-	$('#form #action').val('vote');
-	$('.role').removeClass('s');
-	$('.role.five').addClass('s');
-	$('#form #vote').val('5');
-	shareData.name = '我剛剛在「迷失課」中選擇犧牲了 阿風';
-	goVote();
 }
 
 function goVote() {
@@ -145,7 +150,7 @@ function goVote3() {
 }
 
 
-function Facebook_Login() {
+function Facebook_Login(cid) {
 	// Facebook Connect
 	PatwFB.Login(
 		function (response) {
@@ -153,8 +158,6 @@ function Facebook_Login() {
 			$("#fbid").val(response.id);
 			$("#fullname").val(response.name);
 			$("#email").val(response.email);
-
-			// isFan();
 
 			$('#form #action').val('getvote');
 
@@ -182,6 +185,17 @@ function Facebook_Login() {
 						$('#form #action').val('vote');
 
 						FBstatus = 'connected';
+
+						if (cid == 1)
+							voteFor1();
+						else if (cid == 2)
+							voteFor2();
+						else if (cid == 3)
+							voteFor3();
+						else if (cid == 4)
+							voteFor4();
+						else if (cid == 5)
+							voteFor5();
 
 					} else {
 						alert(response.Msg);
