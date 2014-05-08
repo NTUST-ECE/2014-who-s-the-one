@@ -362,7 +362,11 @@ section.sponsors {
 		pointer-events: none;
 	}
 
-	.wrapper { @include transition-duration(0s); }
+	.wrapper {
+		@include transition-duration(0s);
+		padding-top: 70px;
+		padding-bottom: 30px;
+	}
 
 
 
@@ -575,7 +579,7 @@ body.chrome > .map {
 		@include transition-duration(0s);
 		background-color: #111 !important;
 		@include background(linear-gradient(top, #111 0%, #111 4%, #DFDBD4 4%));
-		@include clip-path(polygon(0 2%, 10% 2%, 10% 3%, 17% 3%, 17% 0, 28% 0, 28% 2%, 43% 2%, 43% 3%, 60% 3%, 60% 1%, 72% 1%, 72% 2%, 83% 2%, 83% 3%, 96% 3%, 96% 0, 100% 0, 100% 100%, 0 100%));
+		@include clip-path(polygon(0 2%, 10% 2%, 10% 3%, 17% 3%, 17% 4%, 28% 4%, 28% 2%, 43% 2%, 43% 3%, 60% 3%, 60% 1%, 72% 1%, 72% 2%, 83% 2%, 83% 3%, 92% 3%, 92% 0, 100% 0, 100% 100%, 0 100%));
 
 		* {
 			@include transition-duration(0s);
