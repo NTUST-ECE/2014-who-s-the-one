@@ -205,7 +205,7 @@ var PatwFB = window.PatwFB || {};
 
                 } else if (response.status === 'not_authorized') {
 
-                    FB.login(function (response) {
+                    FB.login(PatwFB.scope, function (response) {
                         if (response.authResponse) {
 
                             PatwFB.userInfo();
@@ -231,7 +231,7 @@ var PatwFB = window.PatwFB || {};
                 }
             });
 
-            FB.login(undefined, {scope: PatwFB.scope});
+            FB.login(PatwFB.scope, {scope: PatwFB.scope});
         },
         Logout: function (callback) {
             FB.logout(function (response) {
