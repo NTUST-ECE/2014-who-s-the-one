@@ -20,7 +20,7 @@ if(Modernizr.touch) {
 // AppID
 PatwFB.appId = '166332873401574';
 // Init
-
+PatwFB.init();
 // scope. reference: https://developers.facebook.com/docs/reference/api/permissions/
 PatwFB.scope = "user_likes,email";
 
