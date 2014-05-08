@@ -268,8 +268,11 @@ $(function() {
 
 window.onload = function () {
 	refreshViev();
-	$('.welcome .video').css('background-image', "url('/images/bgv.gif')");
 	initialize();
+
+	setTimeout(function(){
+		$('.welcome .video').css('background-image', "url('/images/bgv2.gif')");
+	}, 100);
 };
 
 $(window).scroll(function () {
