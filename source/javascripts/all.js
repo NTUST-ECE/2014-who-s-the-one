@@ -161,7 +161,6 @@ function goVote3() {
 
 function Facebook_Login(cid) {
 
-	PatwFB.Login();
 	// Facebook Connect
 	PatwFB.Login(
 		function (response) {
