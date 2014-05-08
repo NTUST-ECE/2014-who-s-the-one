@@ -259,25 +259,27 @@ function refreshViev() {
 
 }
 
-$(function() {
-
-	function loadData() {
-		if (!FBready) {
-			FBTimer = setTimeout("loadData()", 1000);
-		} else {
-			clearTimeout(FBTimer);
-			FB.getLoginStatus(function(response) {
-				if (response.status === 'connected') {
-					Facebook_Login();
-				} else if (response.status === 'not_authorized') {
-					// the user is logged in to Facebook,
-					// but has not authenticated your app
-				} else {
-					// the user isn't logged in to Facebook.
-				}
-			});
-		}
+function loadData() {
+	if (!FBready) {
+		FBTimer = setTimeout("loadData()", 1000);
+		console.log('Waiting for FB to init.')
+	} else {
+		clearTimeout(FBTimer);
+		FB.getLoginStatus(function(response) {
+			if (response.status === 'connected') {
+				Facebook_Login();
+			} else if (response.status === 'not_authorized') {
+				// the user is logged in to Facebook,
+				// but has not authenticated your app
+			} else {
+				// the user isn't logged in to Facebook.
+			}
+		});
 	}
+}
+loadData();
+
+$(function() {
 
 	$('a[href*=#]:not([href=#])').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
