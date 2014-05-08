@@ -21,6 +21,8 @@ if(Modernizr.touch) {
 PatwFB.appId = '166332873401574';
 // Init
 PatwFB.init(function () {
+	PatwFB.scope = "user_likes,email";
+
 	PatwFB.setSize();
 
 	FB.getLoginStatus(function(response) {
