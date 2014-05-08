@@ -1,12 +1,7 @@
 WHO's THE ONE
 =============
 
-四系之夜活動網站。
-
-## Config
-
-- data/config.json
-- source/config.php
+不分之夜「迷失課」活動官網。
 
 ## Build Site
 
@@ -16,4 +11,4 @@ bower install
 middleman build
 ```
 
-Source code 超髒！！！不要看！！！
+Source code 超髒！！！不要看！！！(◎_◎;)
