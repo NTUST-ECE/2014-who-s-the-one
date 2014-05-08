@@ -294,6 +294,15 @@ $(window).scroll(function () {
 		$('.top-bar').removeClass('show');
 	}
 
+	$('.top-bar a').each(function(){
+		if ($($(this).attr('href')).offset().top - $(window).scrollTop() < 30) {
+			$('.top-bar a').removeClass('active');
+			$(this).addClass('active');
+		} else {
+			$(this).removeClass('active');
+		}
+	});
+
 });
 
 $(window).resize(function() {

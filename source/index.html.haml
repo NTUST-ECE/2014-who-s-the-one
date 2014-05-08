@@ -1,17 +1,33 @@
 %nav{:class => "top-bar"}
   %ul
     %li
-      %a{href: "#body"} Who's The One
+      %a{href: "#body"} 
+        %span Who's The One | 
     %li
-      %a{href: "#story"} Story
+      %a{href: "#story"}
+        %span
+          故事
+          %small Story
     %li
-      %a{href: "#sponsors"} Sponsors
+      %a{href: "#sponsors"}
+        %span
+          贊助商
+          %small Sponsors
     %li
-      %a{href: "#vote"} Vote
+      %a{href: "#vote"}
+        %span
+          角色介紹／做抉擇，抽大獎
+          %small Your Choice
     %li
-      %a{href: "#location"} Location
+      %a{href: "#location"}
+        %span
+          時間地點
+          %small Location
     %li
-      %a{href: "#comments"} Comments
+      %a{href: "#comments"}
+        %span
+          喇賽
+          %small Comments
 
 #saving.alert 儲存中
 #success.alert 儲存成功！
@@ -85,55 +101,55 @@
     /  .img= image_tag lorem.image('400x200', :text => 'LOGO')
     /%a.clogo{:href => '#', :target => '_blank'}
     /  .img= image_tag lorem.image('400x250', :text => 'LOGO')
-    
+
 .before-vote
 %section.vote#vote
   .wrapper
 
-    %h1 
-      做抉擇，拿大獎！
-      %small Your Choice
+    :markdown
+      # 做<b>抉擇</b>，拿<b>大獎</b>！ <small>Your Choice</small>
 
-    %p 
-      點擊照片，查看主角們的故事，做出您睿智的判斷，就有機會抱著大獎。
-      %br 現在投下關鍵的一票，誰應該被犧牲？誰又值得獲救？
-      %br 表演當天將抽出，最佳判斷獎以及最高人氣獎，各從預測正確的票數、得票最高的主角票數中，抽出大獎。時間所剩不多，時不宜遲，做出您的抉擇吧！
+      現在投下關鍵的一票，誰應該被犧牲？誰又值得獲救？  
+      點擊照片，查看主角們的故事，做出您睿智的判斷，就有機會抱走大獎。  
+      表演當天，將各從*正確預測結局*和*所有參加投票者*中，抽出大獎。時間所剩不多，時不宜遲，做出您的抉擇吧！
     
     %article.role.one
       %a.img{'data-reveal-id' => "r1"}= image_tag 'role/1.jpg'
       %h1 溫拿
+      %p 單純地認為自己不需要多餘的社交。總是身為局外人的他，反而看到了更多事。
       %a.vote.button.alert{'onclick' => 'voteFor1()'} 犧牲他
       %a.vote.button.alert.disabled 你選擇犧牲他
-      %p 突然鋒利的回憶，只剩眼淚，好想你，越傷人了大門取代一道牆，跌跌撞撞的走著突然好想你，遠離了世界塵垢，還騙不過自己最怕回憶，在我活的地方為什麼你。
     %article.role.two
       %a.img{'data-reveal-id' => "r2"}= image_tag 'role/2.jpg'
       %h1 萱姊
+      %p 系上排球隊的隊長，總是為了球隊中的學弟妹們著想，大辣辣的個性，贏得許多人的好感。
       %a.vote.button.alert{'onclick' => 'voteFor2()'} 犧牲他
       %a.vote.button.alert.disabled 你選擇犧牲他
-      %p 在我去唸書之後，那我們如何能夠再次在生活中去冒險，就算是最年輕的初階秘書都有碩士學位。
     %article.role.three
       %a.img{'data-reveal-id' => "r3"}= image_tag 'role/3.jpg'
       %h1 芸芸
+      %p 所謂回頭率 100%，指的就是芸芸這樣的女生，外表看似自信，但心中寂寞空虛。
       %a.vote.button.alert{'onclick' => 'voteFor3()'} 犧牲他
       %a.vote.button.alert.disabled 你選擇犧牲他
-      %p 這一次，先拋開紛擾，每一天笑臉都晴朗燦爛而直接，眼前的模樣關了燈，一直到老了難道就真的，一步步想念。
     %article.role.four
       %a.img{'data-reveal-id' => "r4"}= image_tag 'role/4.jpg'
       %h1 小斌
+      %p 每個班上都一定會有的諧星人物，總是說著些無關緊要的屁話，沒有惡意，只不過是想逗大家笑。
       %a.vote.button.alert{'onclick' => 'voteFor4()'} 犧牲他
       %a.vote.button.alert.disabled 你選擇犧牲他
-      %p 你已經決定了你已經決定了你已經決定了，感情已經用這厚明知難回頭感情已經用這厚明知難回頭我站在你左側卻像隔著銀河我站在你左側卻像隔著銀河我站在你左側。
     %article.role.five
       %a.img{'data-reveal-id' => "r5"}= image_tag 'role/5.jpg'
       %h1 阿風
+      %p 對學習有著衝勁、對未來抱著憧憬的大學新鮮人，在舊生眼中看起來格外耀眼。
       %a.vote.button.alert{'onclick' => 'voteFor5()'} 犧牲他
       %a.vote.button.alert.disabled 你選擇犧牲他
-      %p 使人們沒有年歲的感覺，教幾個人去做官一樣，忘卻了溪和水，乙接著嘴說，也就分外著急，是不容有異議，因為久慣於暗黑的眼睛，現在不高興了，便以身體的重力倒下去，反採用那四季不調和，可能成功嗎？
 
 %section.location#location
   .wrapper
-    %h1 2014台科大工程.管理.創設.電資四系聯合不分之夜!!!!
-    %h2 5/16 (Fri) 6:30 pm at RB-105 NTUST
+    %h1
+      %span 2014台科大工程.管理.創設.電資四系聯合不分之夜!!!!
+    %h2 
+      %span 5/16 (Fri) 6:30 pm at RB-105 NTUST
     %p Welcome to join us and find the special one.
 
     %p 
@@ -146,9 +162,17 @@
       究竟 誰是那個注定的一人 就讓我們一起找尋
       %br
       Who's the one ?
+
+    %p
+      %a.b 好活動，不來嗎
+
+    .fb
+      :markdown
+        <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2F2014-%25E4%25B8%258D%25E5%2588%2586%25E4%25B9%258B%25E5%25A4%259C-%25E8%25BF%25B7%25E5%25A4%25B1%25E8%25AA%25B2-Whos-the-One%2F758597897493233&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80&amp;colorscheme=dark&amp;appId=166332873401574" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:57px; width:100%;" allowTransparency="true"></iframe>
+
 .map
   :markdown
-    <div id="map_canvas" style="width: 100%; height: 400px"></div>
+    <div id="map_canvas" style="width: 100%; height: 500px"></div>
 
 %section.comments#comments
   .wrapper
