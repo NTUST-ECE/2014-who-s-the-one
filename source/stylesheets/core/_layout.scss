@@ -337,8 +337,22 @@ section.sponsors {
 	background-color: #eee;
 	color: #444;
 	@include transition-duration(0s);
+	overflow: hidden;
+	position: relative;
+
+	&::after {
+		content: " ";
+		position: absolute;
+		width: 200%;
+		height: 100%;
+		top: 0;
+		left: -50%;
+		box-shadow: 0 0 160px #000 inset;
+	}
 
 	.wrapper { @include transition-duration(0s); }
+
+
 
 	$i: 1;
 
@@ -376,8 +390,11 @@ section.sponsors {
 //   Vote
 // -------------------------------------
 
-body.chrome section.vote {
+body.chrome .before-vote {
 	margin-top: -52px;
+	background-color: #fff;
+	height: 54px;
+	width: 100%;
 	@include clip-path(polygon(0 10px, 10% 10px, 10% 15px, 17% 15px, 17% 0, 28% 0, 28% 20px, 43% 20px, 43% 50px, 60% 50px, 60% 10px, 72% 10px, 72% 32px, 83% 32px, 83% 16px, 90% 16px, 96% 16px, 96% 0, 100% 0, 100% 100%, 0 100%));
 }
 
