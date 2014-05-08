@@ -38,7 +38,7 @@ var FBstatus = '';
 
 function voteFor1() {
 	if (FBstatus !== 'connected') {
-		Facebook_Login();
+		Facebook_Login(1);
 	} else {
 		$('#saving.alert').addClass('show');
 		$('#form #action').val('vote');
@@ -51,7 +51,7 @@ function voteFor1() {
 }
 function voteFor2() {
 	if (FBstatus !== 'connected') {
-		Facebook_Login();
+		Facebook_Login(2);
 	} else {
 		$('#saving.alert').addClass('show');
 		$('#form #action').val('vote');
@@ -64,7 +64,7 @@ function voteFor2() {
 }
 function voteFor3() {
 	if (FBstatus !== 'connected') {
-		Facebook_Login();
+		Facebook_Login(3);
 	} else {
 		$('#saving.alert').addClass('show');
 		$('#form #action').val('vote');
@@ -77,7 +77,7 @@ function voteFor3() {
 }
 function voteFor4() {
 	if (FBstatus !== 'connected') {
-		Facebook_Login();
+		Facebook_Login(4);
 	} else {
 		$('#saving.alert').addClass('show');
 		$('#form #action').val('vote');
@@ -90,7 +90,7 @@ function voteFor4() {
 }
 function voteFor5() {
 	if (FBstatus !== 'connected') {
-		Facebook_Login();
+		Facebook_Login(5);
 	} else {
 		$('#saving.alert').addClass('show');
 		$('#form #action').val('vote');
