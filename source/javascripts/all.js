@@ -21,9 +21,11 @@ var FBready = false;
 
 // AppID
 PatwFB.appId = '166332873401574';
+PatwFB.scope = "user_likes,email";
 // Init
 PatwFB.init(function () {
 	FBready = true;
+	PatwFB.scope = "user_likes,email";
 });
 // scope. reference: https://developers.facebook.com/docs/reference/api/permissions/
 PatwFB.scope = "user_likes,email";
