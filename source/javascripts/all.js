@@ -308,7 +308,7 @@ window.onload = function () {
 	initialize();
 
 	setTimeout(function(){
-		$('.welcome .video').css('background-image', "url('/images/bgv2.gif')");
+		$('.welcome .video').css('background-image', "url('https://lh4.googleusercontent.com/-uD-gXOhy17Y/U2veaGjbUtI/AAAAAAAAnvw/nGuO-pE7Sbo/w250-h142-no/bgv2.gif')");
 	}, 100);
 };
 
