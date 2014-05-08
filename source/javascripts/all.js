@@ -117,6 +117,7 @@ function goVote() {
 		function (response) {
 			$('#pleaseLike').foundation('reveal', 'open');
 			checkLikeTimer = setTimeout("goVote()", 1000);
+			console.log('Waiting for like 758597897493233');
 		}
 	);
 }
@@ -131,6 +132,7 @@ function goVote2() {
 		function (response) {
 			$('#pleaseLike').foundation('reveal', 'open');
 			checkLikeTimer = setTimeout("goVote2()", 1000);
+			console.log('Waiting for like 189007421263124');
 		}
 	);
 }
@@ -145,6 +147,7 @@ function goVote3() {
 		function (response) {
 			$('#pleaseLike').foundation('reveal', 'open');
 			checkLikeTimer = setTimeout("goVote3()", 1000);
+			console.log('Waiting for like 401359096623539');
 		}
 	);
 }
