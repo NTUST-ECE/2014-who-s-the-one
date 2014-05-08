@@ -15,3 +15,5 @@ bundle install
 bower install
 middleman build
 ```
+
+Source code 超髒！！！不要看！！！

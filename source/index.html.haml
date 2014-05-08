@@ -1,15 +1,37 @@
 %nav{:class => "top-bar"}
   %ul
     %li
-      %a{href: "#body"} Who's The One
+      %a{href: "#body"} 
+        %span Who's The One | 
     %li
-      %a{href: "#story"} Story
+      %a{href: "#story"}
+        %span
+          故事
+          %small Story
     %li
-      %a{href: "#sponsors"} Sponsors
+      %a{href: "#sponsors"}
+        %span
+          贊助商
+          %small Sponsors
     %li
-      %a{href: "#vote"} Vote
+      %a{href: "#vote"}
+        %span
+          角色介紹／做抉擇，抽大獎
+          %small Your Choice
     %li
-      %a{href: "#comments"} Comments
+      %a{href: "#location"}
+        %span
+          時間地點
+          %small Location
+    %li
+      %a{href: "#comments"}
+        %span
+          喇賽
+          %small Comments
+
+#saving.alert 處理犧牲中 (請稍候)
+#success.alert 犧牲成功！您已獲得抽獎資格。記得來喔！(提醒您，您的選擇到活動結束前都可以任意修改)
+#faild.alert 錯誤，請再試一次。
 
 %section.welcome#welcome
   .video
@@ -21,8 +43,12 @@
         %br
         %a.play{'data-reveal-id' => "playVideo"}
           .inner 看影片
-        %h2 2014台科大工程.管理.創設.電資四系聯合不分之夜!!!!
-        %p 生命 是一場不可重演的舞台劇 青春即是導演 編寫回憶／五個人 五段人生 高校的青澀 大學的繽紛／互相交錯圍繞 迷失在時間劇本裡／究竟 誰是那個注定的一人 就讓我們一起找尋
+        / %h2 2014台科大工程.管理.創設.電資四系聯合不分之夜!!!!
+        %p 
+          史上最強企劃！創設、工程、電資、管理，四系聯合，攜手打造夢幻之夜！
+          %br
+          現在投票預測結局，就有機會抽大獎，拿 iPad！
+
     .go-vote
       %a.vote.button.alert{href: "#vote"} 投票＆參加抽獎
 
@@ -35,21 +61,21 @@
       背景故事
       %small Story
 
-    .img= image_tag lorem.image('300x400')
+    .img= image_tag 'story.png'
+    .text
+      :markdown
 
-    :markdown
+        <span class='h'>「<span class='r'>一定得有人犧牲，除了動手，沒有任何規則！</span><br>接下來的課裡，唯一的目的就是*選出一個被犧牲的人*。」</span>
 
-      「一定得有人犧牲，除了動手，沒有任何規則！接下來的課裡，唯一的目的就是<b>選出一個被犧牲的人</b>。」
+        1884 年 7 月，一艘遊船在南大西洋離岸 1300 英里處失事漂流，救生船上僅有 4 名船員，船長，<u>杜德利</u>、大副，<u>史蒂芬</u>、水手，<u>布魯克</u>，最後是 17 歲孤兒出身的船艙服務員，<u>理查帕克</u>。
 
-      1884 年 7 月，一艘遊船在南大西洋離岸 1300 英里處失事漂流，救生船上僅有 4 名船員，船長，杜德利、大副，史蒂芬、水手，布魯克，最後是 17 歲孤兒出身的船艙服務員，理查帕克。
+        <p><u>帕克</u>因飲用海水而致病，缺少淡水和食物的第 20 天時，<u>杜德利</u>在<u>史蒂芬</u>同意下後殺死男孩<u>帕克</u>，此 3 人也因此存活到救援到來。</p>
 
-      帕克因飲用海水而致病，缺少淡水和食物的第20天時，杜德利在史蒂芬同意下後殺死男孩帕克，此 3 人也因此存活到救援到來。 
+        此為英國史上最大爭議訴訟案，<u>女王訴杜德利與史蒂芬案</u> *<span style="display: inline-block;">(R v. Dudley and Stephens 1884)</span>*。
 
-      此為英國史上最大爭議訴訟案，<u>女王訴杜德利與史蒂芬案</u> *(R v. Dudley and Stephens 1884)*。
+        <span class='h'>今天若換作是你，是否能為了生存，對素昧平生的他人下手？而那又是誰該犧牲？</span>
 
-      今天若換作是你，是否能為了生存，對素昧平生的他人下手？而那又是誰該犧牲？
-
-      Who’s the better, who’s not? Who is The One? You decided. 
+        <span class='h'>Who's the better, who's not? Who is <span class='r'>The One</span>? <a class="inverse" href="#vote">You decided.</a> 現在由你決定 ↓</span>
 
 %section.sponsors#sponsors
   .wrapper
@@ -57,55 +83,121 @@
       贊助廠商
       %small Sponsors
 
-    %a.clogo{:href => '#', :target => '_blank'}
-      .img= image_tag lorem.image('400x200', :text => 'LOGO')
-    %a.clogo{:href => '#', :target => '_blank'}
-      .img= image_tag lorem.image('400x200', :text => 'LOGO')
-    %a.clogo{:href => '#', :target => '_blank'}
-      .img= image_tag lorem.image('400x300', :text => 'LOGO')
-    %a.clogo{:href => '#', :target => '_blank'}
-      .img= image_tag lorem.image('400x200', :text => 'LOGO')
-    %a.clogo{:href => '#', :target => '_blank'}
-      .img= image_tag lorem.image('300x300', :text => 'LOGO')
-    %a.clogo{:href => '#', :target => '_blank'}
-      .img= image_tag lorem.image('400x200', :text => 'LOGO')
-    /%a.clogo{:href => '#', :target => '_blank'}
+    %a.clogo{:href => 'https://www.facebook.com/OneLoveDancingfest', :target => '_blank'}
+      .img= image_tag 's/2.jpg'
+    %a.clogo{:href => 'https://www.facebook.com/pages/%E5%A4%8F%E9%BA%97%E7%B5%B2%E8%8A%B1%E5%9C%92-Charisse-Garden/401359096623539', :target => '_blank'}
+      .img= image_tag 's/3.jpg'
+    %a.clogo{:href => 'http://ec.tham.com.tw/', :target => '_blank'}
+      .img= image_tag 's/1.jpg'
+    / %a.clogo{:href => '#', :target => '_blank'}
+    /  .img= image_tag lorem.image('400x200', :text => 'LOGO')
+    / %a.clogo{:href => '#', :target => '_blank'}
+    /  .img= image_tag lorem.image('300x300', :text => 'LOGO')
+    / %a.clogo{:href => '#', :target => '_blank'}
+    /  .img= image_tag lorem.image('400x200', :text => 'LOGO')
+    / %a.clogo{:href => '#', :target => '_blank'}
     /  .img= image_tag lorem.image('400x300', :text => 'LOGO')
     /%a.clogo{:href => '#', :target => '_blank'}
     /  .img= image_tag lorem.image('400x200', :text => 'LOGO')
     /%a.clogo{:href => '#', :target => '_blank'}
     /  .img= image_tag lorem.image('400x250', :text => 'LOGO')
 
+.before-vote
 %section.vote#vote
   .wrapper
-
-    %h1 Your Choice
-
-    %p 放假了，早晨七點，假如明天有更好的世界；把正方形的咖啡桌磨成輪迴，一通電話，B1開了家Lavazza啊，vege，半夜的我竟還未加不加咖啡糾結了半天，其實我真的覺得自己蠻不孝的！
     
-    %article.role
-      %a.img= image_tag 'role/1.jpg'
+    .title
+      :markdown
+        # 做<b>抉擇</b>，拿<b>大獎</b>！ <small>Your Choice</small>
+
+        現在投下關鍵的一票，誰應該被犧牲？誰又值得獲救？  
+        點擊照片，查看主角們的故事，做出您睿智的判斷，就有機會抱走大獎。  
+        表演當天，將抽出大獎，正確預測者獲獎率加倍。時間所剩不多，事不宜遲，做出您的抉擇吧！
+    
+    %article.role.one
+      %a.img{'data-reveal-id' => "r1"}= image_tag 'role/1.jpg'
       %h1 溫拿
-      %p 突然鋒利的回憶，只剩眼淚，好想你，越傷人了大門取代一道牆，跌跌撞撞的走著突然好想你，遠離了世界塵垢，還騙不過自己最怕回憶，在我活的地方為什麼你。
-    %article.role
-      %a.img= image_tag 'role/2.jpg'
+      %p 
+        單純地認為自己不需要多餘的社交。總是身為局外人的他，反而看到了更多事。　　　　　　　　
+      %a.button.about{'data-reveal-id' => "r1"} 看介紹
+      %a.vote.button.alert{'onclick' => 'voteFor1()'} 犧牲他
+      %a.vote.button.alert.disabled 你選擇犧牲他
+    %article.role.two
+      %a.img{'data-reveal-id' => "r2"}= image_tag 'role/2.jpg'
       %h1 萱姊
-      %p 在我去唸書之後，那我們如何能夠再次在生活中去冒險，就算是最年輕的初階秘書都有碩士學位。
-    %article.role
-      %a.img= image_tag 'role/3.jpg'
+      %p 
+        系上排球隊的隊長，總是為了學弟妹們著想，大辣辣的個性，贏得許多人的好感。　　　　　　
+      %a.button.about{'data-reveal-id' => "r2"} 看介紹
+      %a.vote.button.alert{'onclick' => 'voteFor2()'} 犧牲他
+      %a.vote.button.alert.disabled 你選擇犧牲他
+    %article.role.three
+      %a.img{'data-reveal-id' => "r3"}= image_tag 'role/3.jpg'
       %h1 芸芸
-      %p 這一次，先拋開紛擾，每一天笑臉都晴朗燦爛而直接，眼前的模樣關了燈，一直到老了難道就真的，一步步想念。
-    %article.role
-      %a.img= image_tag 'role/4.jpg'
+      %p 
+        所謂回頭率 100%，指的就是芸芸這樣的女生，外表看似自信，但心中寂寞空虛。　　　　　　　
+      %a.button.about{'data-reveal-id' => "r3"} 看介紹
+      %a.vote.button.alert{'onclick' => 'voteFor3()'} 犧牲他
+      %a.vote.button.alert.disabled 你選擇犧牲他
+    %article.role.four
+      %a.img{'data-reveal-id' => "r4"}= image_tag 'role/4.jpg'
       %h1 小斌
-      %p 你已經決定了你已經決定了你已經決定了，感情已經用這厚明知難回頭感情已經用這厚明知難回頭我站在你左側卻像隔著銀河我站在你左側卻像隔著銀河我站在你左側。
-    %article.role
-      %a.img= image_tag 'role/5.jpg'
+      %p 
+        每個班上都一定會有的諧星人物，總是說著些無關緊要的屁話，沒有惡意，只不過是想逗大家笑。
+      %a.button.about{'data-reveal-id' => "r4"} 看介紹
+      %a.vote.button.alert{'onclick' => 'voteFor4()'} 犧牲他
+      %a.vote.button.alert.disabled 你選擇犧牲他
+    %article.role.five
+      %a.img{'data-reveal-id' => "r5"}= image_tag 'role/5.jpg'
       %h1 阿風
-      %p 使人們沒有年歲的感覺，教幾個人去做官一樣，忘卻了溪和水，乙接著嘴說，也就分外著急，是不容有異議，因為久慣於暗黑的眼睛，現在不高興了，便以身體的重力倒下去，反採用那四季不調和，可能成功嗎？
+      %p 
+        對學習有著衝勁、對未來抱著憧憬的大學新鮮人，在舊生眼中看起來格外耀眼。　　　　　　　　
+      %a.button.about{'data-reveal-id' => "r5"} 看介紹
+      %a.vote.button.alert{'onclick' => 'voteFor5()'} 犧牲他
+      %a.vote.button.alert.disabled 你選擇犧牲他
+      
+    .rules
+      :markdown
+        ## 細則
+
+        身分資格：各大專院校生有在「活動官網」投票，並且「當天至現場參與」(獎項將由活動結束後唱名抽出，請備妥相關證件或手機供驗證身份)
+
+        流程：
+
+        1. 投票時，請幫熱心提供我們活動的贊助廠商按完讚，待投票成功訊息出現後，即可擁有活動資格。
+        2. 活動資格會綁定個人的 Facebook 帳號，我們也會在活動當天以 Facebook 名稱抽出幸運兒。
+        3. 成功預測者，抽獎資格將會 ×2，中獎機率加倍！
+
+        每個人在活動期間只有「一張投票機會」，但是你可以在活動開演前，任意更改你的選擇。
 
 %section.location#location
   .wrapper
+    %h1
+      %span 2014台科大工程.管理.創設.電資四系聯合不分之夜!!!!
+    %h2 
+      %span 5/16 (Fri) 6:30 pm at RB-105 NTUST
+    %p Welcome to join us and find the special one.
+
+    %p 
+      生命 是一場不可重演的舞台劇 青春即是導演 編寫回憶
+      %br
+      五個人 五段人生 高校的青澀 大學的繽紛
+      %br
+      互相交錯圍繞 迷失在時間劇本裡
+      %br
+      究竟 誰是那個注定的一人 就讓我們一起找尋
+      %br
+      Who's the one ?
+
+    %p
+      %a.b{:href => 'https://www.facebook.com/pages/2014-%E4%B8%8D%E5%88%86%E4%B9%8B%E5%A4%9C-%E8%BF%B7%E5%A4%B1%E8%AA%B2-Whos-the-One/758597897493233', :target => '_blank'} 好活動，不來嗎
+
+    .fb
+      :markdown
+        <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2F2014-%25E4%25B8%258D%25E5%2588%2586%25E4%25B9%258B%25E5%25A4%259C-%25E8%25BF%25B7%25E5%25A4%25B1%25E8%25AA%25B2-Whos-the-One%2F758597897493233&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80&amp;colorscheme=dark&amp;appId=166332873401574" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:57px; width:100%;" allowTransparency="true"></iframe>
+
+.map
+  :markdown
+    <div id="map_canvas" style="width: 100%; height: 500px"></div>
 
 %section.comments#comments
   .wrapper
@@ -121,3 +213,57 @@
   .flex-video
     :markdown
       <iframe width="853" height="480" src="//www.youtube.com/embed/La3xojtfL_U?rel=0" frameborder="0" allowfullscreen></iframe>
+
+#pleaseLike.reveal-modal.small{"data-reveal" => ""}
+  %p 投票前請先按我們的專頁 (以下全部) 讚喔~
+  %p 獎項由以下廠商 (包括但不限於) 贊助提供。
+  :markdown
+    <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2F2014-%25E4%25B8%258D%25E5%2588%2586%25E4%25B9%258B%25E5%25A4%259C-%25E8%25BF%25B7%25E5%25A4%25B1%25E8%25AA%25B2-Whos-the-One%2F758597897493233&amp;width&amp;height=62&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=166332873401574" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:80px;" allowTransparency="true"></iframe>
+    <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FOneLoveDancingfest&amp;width&amp;height=62&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=166332873401574" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:80px;" allowTransparency="true"></iframe>
+    <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2F%E5%A4%8F%E9%BA%97%E7%B5%B2%E8%8A%B1%E5%9C%92-Charisse-Garden%2F401359096623539&amp;width&amp;height=62&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=166332873401574" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:80px;" allowTransparency="true"></iframe>
+  %a.close-reveal-modal ×
+
+#r1.reveal-modal.role.one.large{"data-reveal" => ""}
+  .img= image_tag 'role/1.jpg'
+  %h1 溫拿
+  %p 溫拿並不是不懂得與人相處，只是單純地（又或許有點自傲地）認為自己不需要多餘的社交。「這對我有任何好處嗎？」每當有人親切的邀請他加入任何活動時，溫拿總這樣回應。久了人們便忽略了他的存在。
+  %p 從另一個角度來看，溫拿或許是比較聰明的那一方。總是身為局外人的他，反而看到了更多事。
+  %p 「人們都是自私的，到了緊要關頭只會為自己著想，看著吧，一定會有人被犧牲的，一定會…」
+  %a.close-reveal-modal ×
+
+#r2.reveal-modal.role.two.large{"data-reveal" => ""}
+  .img= image_tag 'role/2.jpg'
+  %h1 萱姊
+  %p 身為系上排球隊的隊長，總是為了球隊中的學弟妹們著想，大辣辣的個性，贏得許多人的好感，但也不可避免的招來了議論紛紛與冷嘲熱諷。
+  %p 其實萱姊也知道自己不夠女人味，但又如何？比起那些做作的假清純，她寧願維持現在的樣子，不在乎頭髮上的汗水、沾滿砂土的雙手、甚至比男生更加結實的小腿，只要能坦率做自己，能打著喜愛的球就好了。
+  %p 「人們都是些膚淺的垃圾，只看到光鮮亮麗的外表。但是我絕對不會認輸的，我絕對不會為了這種人犧牲，絕對不要！」
+  %a.close-reveal-modal ×
+
+#r3.reveal-modal.role.three.large{"data-reveal" => ""}
+  .img= image_tag 'role/3.jpg'
+  %h1 芸芸
+  %p 大家口中所謂回頭率100%，指的就是芸芸這樣的女生，男生私下會瘋狂傳著她Facebook，隨時關心她感情狀態，一舉一動都會成為話題。
+  %p 習慣了眾人的愛戴與服侍，芸芸從一開始的謙虛，逐漸變的理所當然，甚至開始利用周遭的男生，漸漸的，芸芸的行為受到女生圈的排擠，委屈難過時，沒有半個姊妹掏能述說心事，有的只是一排的蒼蠅的問好。
+  %p 外表看似自信，但心中寂寞空虛。
+  %p 「他，是真正能夠聽見我心聲的人嗎？不，不過又是隻死蒼蠅罷了，那到底誰才是能了解我的人…」
+  %a.close-reveal-modal ×
+  
+#r4.reveal-modal.role.four.large{"data-reveal" => ""}
+  .img= image_tag 'role/4.jpg'
+  %h1 小斌
+  %p 每個班上都一定會有一個諧星人物，總是說著些無關緊要的屁話，沒有惡意，只不過是想逗大家笑。小斌就是這樣的人
+  %p 但也因為這樣，小斌總不被女生們認真看待，無論他多麼貼心、多麼認真聆聽對方的心事，給再多的意見，最後女生必定轉而投身那些帥哥的懷抱。
+  %p 「我不能難過。」小斌這樣告訴自己，為了符合自己在大家眼中的形象，他只能強顏歡笑，若無其事的跟朋友打屁。總是傾聽別人的他，卻沒有人能分享自己的辛酸。
+  %p 「不不不，不會有人對我有興趣，大家還是只在乎自己的，還是別太認真吧，大家都喜歡搞笑，搞笑就好，搞笑就好…」
+  %a.close-reveal-modal ×
+
+#r5.reveal-modal.role.five.large{"data-reveal" => ""}
+  .img= image_tag 'role/5.jpg'
+  %h1 阿風
+  %p 「大家都不願意聽別人的聲音嗎？聯合、結盟、排擠？難道是我一開始的錯嗎？」
+  %p 對學習有著衝勁、對未來抱著憧憬的大學新鮮人，在舊生眼中看起來格外耀眼，但大家了解，這不過是三分鐘熱度，只要再過兩年就會步上自己的後塵了。
+  %p 但阿風不這麼認為，正因為看到這些學長姐們的頹廢，他更下定決心要證明自己，也證明給他們看，自己絕對是更加優秀的人。
+  %p 「憑甚麼你們耍廢，卻要我這個新生負責？整天吵來吵去那大家一起廢不就好了！不行，我絕對不能淪為那樣的人，可惡，我才不要犧牲我的堅持，那這樣，倒底是該犧牲誰…」
+  %a.close-reveal-modal ×
+
+.form= partial 'partials/form'

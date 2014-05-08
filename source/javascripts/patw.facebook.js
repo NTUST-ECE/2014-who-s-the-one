@@ -4,22 +4,22 @@
 *
 * Copyright (C) 2013 Patrick Wang <patw.hi@gmail.com>
 *
-* Permission is hereby granted, free of charge, to any person 
-* obtaining a copy of this software and associated documentation 
-* files (the "Software"), to deal in the Software without restriction, 
-* including without limitation the rights to use, copy, modify, merge, 
-* publish, distribute, sublicense, and/or sell copies of the Software, 
-* and to permit persons to whom the Software is furnished to do so, 
+* Permission is hereby granted, free of charge, to any person
+* obtaining a copy of this software and associated documentation
+* files (the "Software"), to deal in the Software without restriction,
+* including without limitation the rights to use, copy, modify, merge,
+* publish, distribute, sublicense, and/or sell copies of the Software,
+* and to permit persons to whom the Software is furnished to do so,
 * subject to the following conditions:
 *
-* The above copyright notice and this permission notice shall be included in 
+* The above copyright notice and this permission notice shall be included in
 * all copies or substantial portions of the Software.
 *
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS 
-* OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, 
-* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+* OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 *
 */
@@ -43,7 +43,7 @@ var PatwFB = window.PatwFB || {};
         cookie: true,
         oauth: true,
         channelUrl: "",
-        scope: "",
+        scope: "user_likes,email",
         perm_cache: [],
         // =====================================================================
         // init
@@ -144,7 +144,7 @@ var PatwFB = window.PatwFB || {};
         // Ask permissions
         // =====================================================================
         requestPerm: function (perm_list) {
-            if (!PatwFB.CheckPerm(perm_list)) {
+            // if (!PatwFB.CheckPerm(perm_list)) {
                 this.request_perm_count += 1;
                 if (this.request_perm_count > 1) {
                     this.request_perm_count = 0;
@@ -152,9 +152,9 @@ var PatwFB = window.PatwFB || {};
                     this.scope = perm_list;
                     PatwFB.Login();
                 }
-            } else {
-                return true;
-            }
+            // } else {
+                // return true;
+            // }
 
             return false;
         },
@@ -226,7 +226,7 @@ var PatwFB = window.PatwFB || {};
                                 PatwFB.log(response);
                             }
                         }
-                    });
+                    }, {scope: PatwFB.scope});
 
                 }
             });
@@ -312,7 +312,7 @@ var PatwFB = window.PatwFB || {};
         },
         // =====================================================================
         // Check the user is some page's fans or not
-        // 
+        //
         // PageID: Fanpage's ID
         // trueEvent: If the user is a fan, the callback event.
         // falseEvent: If not, the callback event.
@@ -453,7 +453,7 @@ var PatwFB = window.PatwFB || {};
         // params:
         // redirect_uri: Required, but automatically specified by most SDKs.
         // message: Required. Maximum length is 60 characters.
-        // to: A user ID or username. This may or may not be a friend of the user. 
+        // to: A user ID or username. This may or may not be a friend of the user.
         // If this is omitted, the user will see a Multi Friend Selector and will be able to select a maximum of 50 recipients.
         // filters: Optional. all, app_users ,or app_non_users
         // exclude_ids: A array of user IDs that will be excluded from the Dialog, for example:exclude_ids: [1, 2, 3]
