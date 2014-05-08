@@ -20,22 +20,7 @@ if(Modernizr.touch) {
 // AppID
 PatwFB.appId = '166332873401574';
 // Init
-PatwFB.init(function () {
-	PatwFB.scope = "user_likes,email";
-
-	PatwFB.setSize();
-
-	FB.getLoginStatus(function(response) {
-		if (response.status === 'connected') {
-			Facebook_Login();
-		} else if (response.status === 'not_authorized') {
-			// the user is logged in to Facebook,
-			// but has not authenticated your app
-		} else {
-			// the user isn't logged in to Facebook.
-		}
-	});
-});
+PatwFB.init();
 // scope. reference: https://developers.facebook.com/docs/reference/api/permissions/
 PatwFB.scope = "user_likes,email";
 
@@ -271,6 +256,17 @@ function refreshViev() {
 }
 
 $(function() {
+
+	FB.getLoginStatus(function(response) {
+		if (response.status === 'connected') {
+			Facebook_Login();
+		} else if (response.status === 'not_authorized') {
+			// the user is logged in to Facebook,
+			// but has not authenticated your app
+		} else {
+			// the user isn't logged in to Facebook.
+		}
+	});
 
 	$('a[href*=#]:not([href=#])').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
