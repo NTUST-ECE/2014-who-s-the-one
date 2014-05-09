@@ -335,7 +335,7 @@ $(window).scroll(function () {
 	}
 
 	$('.top-bar a').each(function(){
-		if ($($(this).attr('href')).offset().top - $(window).scrollTop() < 30) {
+		if ($($(this).attr('href')).offset().top - $(window).scrollTop() < 100) {
 			$('.top-bar a').removeClass('active');
 			$(this).addClass('active');
 		} else {
