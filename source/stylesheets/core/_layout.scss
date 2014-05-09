@@ -390,6 +390,12 @@ section.sponsors {
 		padding-bottom: 20px;
 	}
 
+	p {
+		display: block;
+		@include span-columns(10);
+		color: #777;
+	}
+
 
 
 	$i: 1;
