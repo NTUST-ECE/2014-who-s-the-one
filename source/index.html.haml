@@ -36,6 +36,9 @@
 %section.welcome#welcome
   .video
   .bg
+    .p2= image_tag'p/p2.png'
+    .p3= image_tag'p/p3.png'
+    .p1= image_tag'p/p1.png'
   .wrapper
     .center-box
       .content
@@ -87,7 +90,7 @@
       .img= image_tag 's/2.jpg'
     %a.clogo{:href => 'https://www.facebook.com/pages/%E5%A4%8F%E9%BA%97%E7%B5%B2%E8%8A%B1%E5%9C%92-Charisse-Garden/401359096623539', :target => '_blank'}
       .img= image_tag 's/3.jpg'
-    %a.clogo{:href => 'http://ec.tham.com.tw/', :target => '_blank'}
+    %a.clogo{:href => 'https://www.facebook.com/tham888', :target => '_blank'}
       .img= image_tag 's/1.jpg'
     / %a.clogo{:href => '#', :target => '_blank'}
     /  .img= image_tag lorem.image('400x200', :text => 'LOGO')
@@ -101,6 +104,7 @@
     /  .img= image_tag lorem.image('400x200', :text => 'LOGO')
     /%a.clogo{:href => '#', :target => '_blank'}
     /  .img= image_tag lorem.image('400x250', :text => 'LOGO')
+    %p 合作請洽：0956504699 / aand37@gmail.com 周同學
 
 .before-vote
 %section.vote#vote
@@ -128,16 +132,16 @@
       %p 
         系上排球隊的隊長，總是為了學弟妹們著想，大辣辣的個性，贏得許多人的好感。　　　　　　
       %a.button.about{'data-reveal-id' => "r2"} 看介紹
-      %a.vote.button.alert{'onclick' => 'voteFor2()'} 犧牲他
-      %a.vote.button.alert.disabled 你選擇犧牲他
+      %a.vote.button.alert{'onclick' => 'voteFor2()'} 犧牲她
+      %a.vote.button.alert.disabled 你選擇犧牲她
     %article.role.three
       %a.img{'data-reveal-id' => "r3"}= image_tag 'role/3.jpg'
       %h1 芸芸
       %p 
         所謂回頭率 100%，指的就是芸芸這樣的女生，外表看似自信，但心中寂寞空虛。　　　　　　　
       %a.button.about{'data-reveal-id' => "r3"} 看介紹
-      %a.vote.button.alert{'onclick' => 'voteFor3()'} 犧牲他
-      %a.vote.button.alert.disabled 你選擇犧牲他
+      %a.vote.button.alert{'onclick' => 'voteFor3()'} 犧牲她
+      %a.vote.button.alert.disabled 你選擇犧牲她
     %article.role.four
       %a.img{'data-reveal-id' => "r4"}= image_tag 'role/4.jpg'
       %h1 小斌
@@ -157,6 +161,15 @@
       
     .rules
       :markdown
+
+        ## 獎項
+
+        * 首獎 / Apple iPad mini
+        * 次獎 / ONE LOVE 音樂季 門票五張 (市價 NT$6500)
+        * 參獎 / 夏麗絲花園十人份餐點卷一張 (市價 NT$6000)
+        * 四獎 / 台畜肉鬆禮盒
+        * 持續增加中
+
         ## 細則
 
         身分資格：各大專院校生有在「活動官網」投票，並且「當天至現場參與」(獎項將由活動結束後唱名抽出，請備妥相關證件或手機供驗證身份)
@@ -168,6 +181,8 @@
         3. 成功預測者，抽獎資格將會 ×2，中獎機率加倍！
 
         每個人在活動期間只有「一張投票機會」，但是你可以在活動開演前，任意更改你的選擇。
+
+        如本活動因不可抗力之特殊原因無法執行時，主辦單位有權決定取消、終止、修改或暫停本活動。
 
 %section.location#location
   .wrapper
@@ -212,7 +227,7 @@
 #playVideo.reveal-modal.medium{"data-reveal" => "", :style => 'padding: 0;'}
   .flex-video
     :markdown
-      <iframe width="853" height="480" src="//www.youtube.com/embed/La3xojtfL_U?rel=0" frameborder="0" allowfullscreen></iframe>
+      <iframe width="853" height="480" src="//www.youtube.com/embed/q1NOQxQfZKc?rel=0" frameborder="0" allowfullscreen></iframe>
 
 #pleaseLike.reveal-modal.small{"data-reveal" => ""}
   %p 投票前請先按我們的專頁 (以下全部) 讚喔~

@@ -35,7 +35,7 @@ var checkLikeTimer = 0;
 var shareData = {
 	method: 'feed',
 	name: '',
-	description: "史上最強企劃！創設、工程、電資、管理，四系聯合，攜手打造夢幻之夜！現在投票預測結局，就有機會抽大獎！ ... 生命 是一場不可重演的舞台劇 青春即是導演 編寫回憶／五個人 五段人生 高校的青澀 大學的繽紛／互相交錯圍繞 迷失在時間劇本裡／究竟 誰是那個注定的一人 就讓我們一起找尋／Who's the one ?",
+	description: "你，是否能為了生存，對素昧平生的他人下手？而那又是誰該犧牲？現在投票預測結局，就有機會抽大獎，拿 iPad！創設、工程、電資、管理，四系聯合，攜手打造夢幻之夜：生命 是一場不可重演的舞台劇 青春即是導演 編寫回憶／五個人 五段人生 高校的青澀 大學的繽紛／互相交錯圍繞 迷失在時間劇本裡／究竟 誰是那個注定的一人 就讓我們一起找尋／Who's the one ?",
 	link: 'http://who.ntust.co',
 	picture: ''
 };
@@ -335,7 +335,7 @@ $(window).scroll(function () {
 	}
 
 	$('.top-bar a').each(function(){
-		if ($($(this).attr('href')).offset().top - $(window).scrollTop() < 30) {
+		if ($($(this).attr('href')).offset().top - $(window).scrollTop() < 100) {
 			$('.top-bar a').removeClass('active');
 			$(this).addClass('active');
 		} else {

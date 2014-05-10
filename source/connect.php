@@ -35,7 +35,7 @@
     curl_close($curl);
     $decoded = json_decode($curl_response);
 
-    if (isset($decoded->error) || (isset($decoded->id) && isset($decoded->id) != $_POST['fbid'])) {
+    if (isset($decoded->error) || (($decoded->id) != $_POST['fbid'])) {
 
       $Success = -1;
       $Msg = 'This is not the token you are using.';
