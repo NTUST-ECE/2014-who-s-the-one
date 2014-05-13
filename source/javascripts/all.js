@@ -121,7 +121,6 @@ function goVote() {
 
 	PatwFB.isFan("758597897493233",
 		function (response) {
-			$('#pleaseLike').foundation('reveal', 'close');
 			clearTimeout(checkLikeTimer);
 			goVote2();
 		},
@@ -136,7 +135,6 @@ function goVote() {
 function goVote2() {
 	PatwFB.isFan("189007421263124",
 		function (response) {
-			$('#pleaseLike').foundation('reveal', 'close');
 			clearTimeout(checkLikeTimer);
 			goVote3();
 		},
@@ -151,14 +149,27 @@ function goVote2() {
 function goVote3() {
 	PatwFB.isFan("401359096623539",
 		function (response) {
-			$('#pleaseLike').foundation('reveal', 'close');
+			clearTimeout(checkLikeTimer);
+			goVote4();
+		},
+		function (response) {
+			$('#pleaseLike').foundation('reveal', 'open');
+			checkLikeTimer = setTimeout("goVote3()", 1000);
+			console.log('Waiting for like 401359096623539');
+		}
+	);
+}
+
+function goVote4() {
+	PatwFB.isFan("522623651112699",
+		function (response) {
 			clearTimeout(checkLikeTimer);
 			Vote();
 		},
 		function (response) {
 			$('#pleaseLike').foundation('reveal', 'open');
 			checkLikeTimer = setTimeout("goVote3()", 1000);
-			console.log('Waiting for like 401359096623539');
+			console.log('Waiting for like 522623651112699');
 		}
 	);
 }
@@ -229,6 +240,8 @@ function Facebook_Login(cid) {
 }
 
 function Vote() {
+
+	$('#pleaseLike').foundation('reveal', 'close');
 
 	$.ajax({
 		async: false,
