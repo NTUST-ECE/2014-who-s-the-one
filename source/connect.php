@@ -24,39 +24,42 @@
 
   if ($_POST['action'] == 'vote') {
 
-    $sql = "INSERT INTO `log` ( `ip` , `fbid` , `action` , `token` ) VALUES ( '" . $ip . "',  '" . mysql_real_escape_string($_POST['fbid']) . "',  '" . 'vote to ' . mysql_real_escape_string($_POST['vote']) . ' with ' . mysql_real_escape_string($_POST['email']) . "',  '" . mysql_real_escape_string($_POST['token']) . "');";
-    $result = mysql_query($sql) or die('{ "Success": "-1", "Msg": "Mysql Error: ' . '" }');
+    // $sql = "INSERT INTO `log` ( `ip` , `fbid` , `action` , `token` ) VALUES ( '" . $ip . "',  '" . mysql_real_escape_string($_POST['fbid']) . "',  '" . 'vote to ' . mysql_real_escape_string($_POST['vote']) . ' with ' . mysql_real_escape_string($_POST['email']) . "',  '" . mysql_real_escape_string($_POST['token']) . "');";
+    // $result = mysql_query($sql) or die('{ "Success": "-1", "Msg": "Mysql Error: ' . '" }');
 
-    // 驗證 token
-    $service_url = 'https://graph.facebook.com/me?access_token=' . mysql_real_escape_string($_POST['token']);
-    $curl = curl_init($service_url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    $curl_response = curl_exec($curl);
-    curl_close($curl);
-    $decoded = json_decode($curl_response);
+    // // 驗證 token
+    // $service_url = 'https://graph.facebook.com/me?access_token=' . mysql_real_escape_string($_POST['token']);
+    // $curl = curl_init($service_url);
+    // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    // $curl_response = curl_exec($curl);
+    // curl_close($curl);
+    // $decoded = json_decode($curl_response);
 
-    if (isset($decoded->error) || (($decoded->id) != $_POST['fbid'])) {
+    // if (isset($decoded->error) || (($decoded->id) != $_POST['fbid'])) {
 
-      $Success = -1;
-      $Msg = 'This is not the token you are using.';
+    //   $Success = -1;
+    //   $Msg = 'This is not the token you are using.';
 
-    } else {
+    // } else {
 
-      $sql = "SELECT * FROM `user` WHERE `fbid` = '" . mysql_real_escape_string($_POST['fbid']) . "'";
-      $result = mysql_query($sql) or die('{ "Success": "-1", "Msg": "Mysql Error: ' . '" }');
+    //   $sql = "SELECT * FROM `user` WHERE `fbid` = '" . mysql_real_escape_string($_POST['fbid']) . "'";
+    //   $result = mysql_query($sql) or die('{ "Success": "-1", "Msg": "Mysql Error: ' . '" }');
 
-      if (mysql_num_rows($result) > 0) {
-        $sql = "UPDATE `user` SET `vote` = '" . mysql_real_escape_string($_POST['vote']) . "' WHERE `fbid` = '" . mysql_real_escape_string($_POST['fbid']) . "';";
-        $result = mysql_query($sql) or die('{ "Success": "-1", "Msg": "Mysql Error: ' . '" }');
-        $Msg = 'Updated.';
+    //   if (mysql_num_rows($result) > 0) {
+    //     $sql = "UPDATE `user` SET `vote` = '" . mysql_real_escape_string($_POST['vote']) . "' WHERE `fbid` = '" . mysql_real_escape_string($_POST['fbid']) . "';";
+    //     $result = mysql_query($sql) or die('{ "Success": "-1", "Msg": "Mysql Error: ' . '" }');
+    //     $Msg = 'Updated.';
 
-      } else {
-        $sql = "INSERT INTO `user` ( `fbid` , `fullname` , `email` , `token` , `vote` ) VALUES ( '" . mysql_real_escape_string($_POST['fbid']) . "',  '" . mysql_real_escape_string($_POST['fullname']) . "',  '" . mysql_real_escape_string($_POST['email']) . "',  '" . mysql_real_escape_string($_POST['token']) . "',  '" . mysql_real_escape_string($_POST['vote']) . "');";
-        $result = mysql_query($sql) or die('{ "Success": "-1", "Msg": "Mysql Error: ' . '" }');
-        $Msg = 'INserted.';
-      }
+    //   } else {
+    //     $sql = "INSERT INTO `user` ( `fbid` , `fullname` , `email` , `token` , `vote` ) VALUES ( '" . mysql_real_escape_string($_POST['fbid']) . "',  '" . mysql_real_escape_string($_POST['fullname']) . "',  '" . mysql_real_escape_string($_POST['email']) . "',  '" . mysql_real_escape_string($_POST['token']) . "',  '" . mysql_real_escape_string($_POST['vote']) . "');";
+    //     $result = mysql_query($sql) or die('{ "Success": "-1", "Msg": "Mysql Error: ' . '" }');
+    //     $Msg = 'INserted.';
+    //   }
 
-    }
+    // }
+
+    $Success = -1;
+    $Msg = 'Event ended.';
 
   } else if ($_POST['action'] == 'getvote') {
 
