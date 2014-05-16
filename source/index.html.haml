@@ -16,8 +16,8 @@
     %li
       %a{href: "#vote"}
         %span
-          角色介紹／做抉擇，抽大獎
-          %small Your Choice
+          角色介紹
+          %small Roles
     %li
       %a{href: "#location"}
         %span
@@ -50,10 +50,10 @@
         %p 
           史上最強企劃！創設、工程、電資、管理，四系聯合，攜手打造夢幻之夜！
           %br
-          現在投票預測結局，就有機會抽大獎，拿 iPad！
+          你，是否能為了生存，對素昧平生的他人下手？而那又是誰該犧牲？
 
     .go-vote
-      %a.vote.button.alert{href: "#vote"} 投票＆參加抽獎
+      / %a.vote.button.alert{href: "#vote"} 投票＆參加抽獎
 
 .after-welcome
 
@@ -78,7 +78,7 @@
 
         <span class='h'>今天若換作是你，是否能為了生存，對素昧平生的他人下手？而那又是誰該犧牲？</span>
 
-        <span class='h'>Who's the better, who's not? Who is <span class='r'>The One</span>? <a class="inverse" href="#vote">You decided.</a> 現在由你決定 ↓</span>
+        <span class='h'>Who's the better, who's not? Who is <span class='r'>The One</span>? <a class="inverse" href="#vote">Watch the Show!</a>看完整表演！(影片處理中)</span>
 
 %section.sponsors#sponsors
   .wrapper
@@ -116,12 +116,7 @@
     
     .title
       :markdown
-        # 做<b>抉擇</b>，拿<b>大獎</b>！ <small>Your Choice</small>
-
-        大獎雙重抽！現在投下關鍵的一票，誰應該被犧牲？誰又值得獲救？  
-        點擊照片，查看主角們的故事，做出您睿智的判斷，就有機會抱走大獎。正確預測者獲獎率加倍！
-
-        在「表演當天現場」與「網路」將分別抽出 iPad、鐵三角耳機、豪華餐卷、音樂祭門票等多項大獎，<br>時間所剩不多，事不宜遲，做出您的抉擇吧！
+        # 角色介紹 <small>Roles</small>
     
     %article.role.one
       %a.img{'data-reveal-id' => "r1"}= image_tag 'role/1.jpg'
@@ -129,7 +124,7 @@
       %p 
         單純地認為自己不需要多餘的社交。總是身為局外人的他，反而看到了更多事。　　　　　　　　
       %a.button.about{'data-reveal-id' => "r1"} 看介紹
-      %a.vote.button.alert{'onclick' => 'voteFor1()'} 犧牲他
+      / %a.vote.button.alert{'onclick' => 'voteFor1()'} 犧牲他
       %a.vote.button.alert.disabled 你選擇犧牲他
     %article.role.two
       %a.img{'data-reveal-id' => "r2"}= image_tag 'role/2.jpg'
@@ -137,7 +132,7 @@
       %p 
         系上排球隊的隊長，總是為了學弟妹們著想，大辣辣的個性，贏得許多人的好感。　　　　　　
       %a.button.about{'data-reveal-id' => "r2"} 看介紹
-      %a.vote.button.alert{'onclick' => 'voteFor2()'} 犧牲她
+      / %a.vote.button.alert{'onclick' => 'voteFor2()'} 犧牲她
       %a.vote.button.alert.disabled 你選擇犧牲她
     %article.role.three
       %a.img{'data-reveal-id' => "r3"}= image_tag 'role/3.jpg'
@@ -145,7 +140,7 @@
       %p 
         所謂回頭率 100%，指的就是芸芸這樣的女生，外表看似自信，但心中寂寞空虛。　　　　　　　
       %a.button.about{'data-reveal-id' => "r3"} 看介紹
-      %a.vote.button.alert{'onclick' => 'voteFor3()'} 犧牲她
+      / %a.vote.button.alert{'onclick' => 'voteFor3()'} 犧牲她
       %a.vote.button.alert.disabled 你選擇犧牲她
     %article.role.four
       %a.img{'data-reveal-id' => "r4"}= image_tag 'role/4.jpg'
@@ -153,7 +148,7 @@
       %p 
         每個班上都一定會有的諧星人物，總是說著些無關緊要的屁話，沒有惡意，只不過是想逗大家笑。
       %a.button.about{'data-reveal-id' => "r4"} 看介紹
-      %a.vote.button.alert{'onclick' => 'voteFor4()'} 犧牲他
+      / %a.vote.button.alert{'onclick' => 'voteFor4()'} 犧牲他
       %a.vote.button.alert.disabled 你選擇犧牲他
     %article.role.five
       %a.img{'data-reveal-id' => "r5"}= image_tag 'role/5.jpg'
@@ -161,10 +156,21 @@
       %p 
         對學習有著衝勁、對未來抱著憧憬的大學新鮮人，在舊生眼中看起來格外耀眼。　　　　　　　　
       %a.button.about{'data-reveal-id' => "r5"} 看介紹
-      %a.vote.button.alert{'onclick' => 'voteFor5()'} 犧牲他
+      / %a.vote.button.alert{'onclick' => 'voteFor5()'} 犧牲他
       %a.vote.button.alert.disabled 你選擇犧牲他
-      
+   
+
     .rules
+      .title{:style => "text-align: center;"}
+        :markdown
+
+          # 做<b>抉擇</b>，拿<b>大獎</b>！ <small>Your Choice (活動已結束，感謝您的參與)</small>
+
+          大獎雙重抽！現在投下關鍵的一票，誰應該被犧牲？誰又值得獲救？  
+          點擊照片，查看主角們的故事，做出您睿智的判斷，就有機會抱走大獎。正確預測者獲獎率加倍！
+
+          在「表演當天現場」與「網路」將分別抽出 iPad、鐵三角耳機、豪華餐卷、音樂祭門票等多項大獎，<br>時間所剩不多，事不宜遲，做出您的抉擇吧！
+
       :markdown
 
         ## 獎項
